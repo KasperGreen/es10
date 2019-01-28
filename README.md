@@ -72,7 +72,7 @@
 
 <https://github.com/tc39/proposal-optional-catch-binding>
 
-До ES10 блок ```catch``` требовал обязательного аргумента, для сбора информации об ошибке, даже если она не используется:
+До *ES*10 блок ```catch``` требовал обязательного аргумента, для сбора информации об ошибке, даже если она не используется:
 
 ```javascript
 function isValidJSON(text) {
@@ -84,8 +84,10 @@ function isValidJSON(text) {
   }
 }
 ```
+![](.README_images\edge_catch.png)
 
-Начиная с редакции ES10, круглые скобки можно опустить и ```catch``` стенет похож на ```try```:
+
+Начиная с редакции *ES*10, круглые скобки можно опустить и ```catch``` стенет похож на ```try```:
 ```javascript
 function isValidJSON(text) {
   try {
@@ -96,3 +98,28 @@ function isValidJSON(text) {
   }
 }
 ```
+![](.README_images\chrome_catch.png)
+
+
+## Строки EcmaScript совместимые с JSON
+<https://github.com/tc39/proposal-json-superset>
+
+EcmaScript утверждает, что JSON является подмножеством JSON.parse, но это неверно.
+
+*JSON* строки могут содержать неэкранированные символы
+**U+2028** `LINE SEPARATOR` и **U+2029** `PARAGRAPH SEPARATOR`,
+а *ECMAScript* строки до версии *ES*10 — нет.
+
+Если в **Edge** вызвать `eval()` со строкой `"\u2029"`,
+он ведёт себя так, словно мы сделали перенос строки в прямо в коде.
+
+![](.README_images\edge_line_separator.png)
+
+*ES*10 строки могут содержать эти неэкранированные символы.
+
+Кстати Chrome обновился.
+
+![](.README_images\chrome_line_separator.png)
+
+
+
