@@ -3,7 +3,7 @@
 
 ## Stage 4 — Final
 
-•      **```catch```** — аргумент стал необязательным;
+•      **```catch```** — аргумент стал необязательным; <sup>[#](#neobyazatelnyy-argument-u-catch)</sup>
 
 •      **```Symbol().description```** — акцессор к описанию символа;
 
@@ -77,7 +77,7 @@
 
 
 
-### Необязательный аргумент у catch
+### Необязательный аргумент у `catch`
 
 <https://github.com/tc39/proposal-optional-catch-binding>
 
