@@ -71,7 +71,8 @@
 
 Эти изменения уже вошли в стандарт.
 
----------
+ 
+ 
 
 
 
@@ -101,7 +102,7 @@ function isValidJSON(text) {
 
 
 Начиная с редакции *ES*10, круглые скобки можно опустить
-и ```catch``` стенет похож на ```try```*
+и ```catch``` стенет как две капли воды похож на ```try```.
 
 Мой Chrome уже обновился до *ES*10:
 
@@ -120,7 +121,8 @@ function isValidJSON(text) {
 </spoiler>
 
 
-
+ 
+ 
 
 
 ### Строки EcmaScript совместимые с JSON
@@ -140,7 +142,9 @@ EcmaScript до десятой редакции утверждает,
 
 C *ES*10 строками — всё в порядке:
 
-![](.README_images\chrome_line_separator.png)
+![](https://habrastorage.org/webt/tc/he/tm/tchetmze4axxtp5wghm7pmz-0xc.png)
+
+
 
 
 
