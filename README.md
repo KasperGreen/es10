@@ -1,4 +1,4 @@
-![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора — © от kasper.green & elfafeya.art](https://habrastorage.org/webt/sb/r6/--/sbr6--ko6jzb25xk9i_c8m_1ea4.png)
+![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора — © от kasper.green & elfafeya.art](https://habrastorage.org/webt/nt/a4/y7/nta4y72u_f_kgtwon8jio9ghiwg.png)
 
 # Stage 4 — Final
 
