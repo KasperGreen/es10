@@ -1,6 +1,6 @@
-![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора — © от kasper.green & elfafeya.art](https://habrastorage.org/webt/nt/a4/y7/nta4y72u_f_kgtwon8jio9ghiwg.png)
+![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора —  от kasper.green & elfafeya.art](https://habrastorage.org/webt/nt/a4/y7/nta4y72u_f_kgtwon8jio9ghiwg.png)
+        <cite>Фото: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite>
 
-          <cite>Фото: kasper.green; магнит: elfafeya.art & kasper.green</cite>
 # Stage 4 — Final
 
 •      **```catch```** — аргумент стал необязательным;
