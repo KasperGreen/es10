@@ -1,17 +1,19 @@
 ![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора —  от kasper.green & elfafeya.art](https://habrastorage.org/webt/nt/a4/y7/nta4y72u_f_kgtwon8jio9ghiwg.png)
         <cite>Фото: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite>
 
-# Stage 4 — Final
+## Stage 4 — Final
 
 •      **```catch```** — аргумент стал необязательным;
 
 •      **```Symbol().description```** — акцессор к описанию символа;
 
-•      **```'строки EcmaScript'```** — улучшеная совместимость с **JSON** форматом;
+•      **```'строки EcmaScript'```** — улучшеная совместимость с **JSON** форматом; <sup>[#](#stroki-ecmascript-sovmestimye-s-json)</sup>
 
 •      **```.toString()```** — прототипный метод обновлён.
 
-# Stage 3 — Pre-release
+---------------------------
+
+## Stage 3 — Pre-release
 
 •      **```#```** —  приватное всё у классов, через октоторп;
 
@@ -61,18 +63,25 @@
 ----------------------------
 
 
-# Stage 4
+
+
+
+
+## Stage 4
 
 Эти изменения уже вошли в стандарт.
 
 ---------
 
 
+
+
 ### Необязательный аргумент у catch
 
 <https://github.com/tc39/proposal-optional-catch-binding>
 
-До *ES*10 блок ```catch``` требовал обязательного аргумента, для сбора информации об ошибке, даже если она не используется:
+До *ES*10 блок ```catch``` требовал обязательного аргумента,
+для сбора информации об ошибке, даже если она не используется:
 
 ```javascript
 function isValidJSON(text) {
@@ -84,10 +93,20 @@ function isValidJSON(text) {
   }
 }
 ```
-![](.README_images\edge_catch.png)
+
+*Edge* пока не обновлён до *ES*10 и ожидаемо валится с ошибкой.
+
+![](https://habrastorage.org/webt/ez/l2/2d/ezl22di9ciu-4g60nlqyuqne7lk.png)
 
 
-Начиная с редакции *ES*10, круглые скобки можно опустить и ```catch``` стенет похож на ```try```:
+
+Начиная с редакции *ES*10, круглые скобки можно опустить
+и ```catch``` стенет похож на ```try```*
+
+Мой Chrome уже обновился до *ES*10:
+
+![](https://habrastorage.org/webt/yi/ia/qg/yiiaqgiclyxz_i7bf3gq14dj-8m.png)
+<spoiler title="исходный код">
 ```javascript
 function isValidJSON(text) {
   try {
@@ -98,13 +117,17 @@ function isValidJSON(text) {
   }
 }
 ```
-![](.README_images\chrome_catch.png)
+</spoiler>
 
 
-## Строки EcmaScript совместимые с JSON
+
+
+
+### Строки EcmaScript совместимые с JSON
 <https://github.com/tc39/proposal-json-superset>
 
-EcmaScript утверждает, что JSON является подмножеством JSON.parse, но это неверно.
+EcmaScript до десятой редакции утверждает,
+что JSON является подмножеством JSON.parse, но это неверно.
 
 *JSON* строки могут содержать неэкранированные символы
 **U+2028** `LINE SEPARATOR` и **U+2029** `PARAGRAPH SEPARATOR`,
@@ -113,11 +136,9 @@ EcmaScript утверждает, что JSON является подмножес
 Если в **Edge** вызвать `eval()` со строкой `"\u2029"`,
 он ведёт себя так, словно мы сделали перенос строки в прямо в коде.
 
-![](.README_images\edge_line_separator.png)
+![](https://habrastorage.org/webt/b1/r4/6d/b1r46dits2ndu6lo3t2yqeq2pp8.png)
 
-*ES*10 строки могут содержать эти неэкранированные символы.
-
-Кстати Chrome обновился.
+C *ES*10 строками — всё в порядке:
 
 ![](.README_images\chrome_line_separator.png)
 
