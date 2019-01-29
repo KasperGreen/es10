@@ -481,9 +481,105 @@ deep_deep_array.flat(2)
 
 deep_deep_array.flat(100500)
 // ["первый уровень", "второй уровень", "третий уровень", "четвёртый уровень", "пятый уровень"]
+```
+
 .flatMap  не экфивалентно последовательному вызову .flat().map().
+```javascript
 ['Hello', 'World'].flatMap(word => [...word])
 // ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
+```
+
+
+ 
+ 
+
+
+
+
+## `globalThis` — новый способ доступа к глобальному контексту
+
+<https://github.com/tc39/proposal-global>
+
+<sup>* *уже добавлено в Chrome*</sup>
+
+Поскольку реализации глобальной области видимости зависят от конкретного движка, раньше приходилось делать что-то вроде этого:
+
+```javascript
+var getGlobal = function () {
+	if (typeof self !== 'undefined') { return self; }
+	if (typeof window !== 'undefined') { return window; }
+	if (typeof global !== 'undefined') { return global; }
+	throw new Error('unable to locate global object');
+};
+```
+
+И даже такой вариант не гарантировал, что всё точно будет работать.
+
+`globalThis` — общий для всех платформ способ доступа к глобальной бласти видимости:
+
+```javascript
+// Обращение к глобальному конструктору массива
+globalThis.Array(1,2,3)
+// [1, 2, 3]
+
+// Запись собственных данных в глобальную область видимости
+globalThis.myGLobalSettings = {
+	it_is_cool: true
+}
+
+// Чтение собственных данных из глобальной области видимости
+globalThis.myGLobalSettings
+//{it_is_cool: true}
+```
+
+
+
+ 
+ 
+
+
+## .matchAll() — новый прототипный метод строк
+
+https://github.com/tc39/proposal-string-matchall
+
+<sup>* *уже добавлено в Chrome*</sup>
+
+Работает похоже на метод `.match()` с включенным  флагом `g`, но возвращает итератор:
+
+```javascript
+const string_for_searh = 'olololo'
+
+// Вернёт первое вхождение с дополнительной информацией о нём
+string_for_searh.match(/o/)
+// ["o", index: 0, input: "olololo", groups: undefined]
+
+
+//Вернёт массив всех вхожденийбез дополнительной информации
+string_for_searh.match(/o/g)
+// ["o", "o", "o", "o"]
+
+// Вернёт итератор
+string_for_searh.matchAll(/o/)
+// {_r: /o/g, _s: "olololo"}
+
+// Итератор возвращает каждое последующее вхождение с подробной информацией,
+// как если бы мы использовали .match без глобального флага
+for(const item of string_for_searh.matchAll(/o/)) {
+  console.log(item)
+}
+// ["o", index: 0, input: "olololo", groups: undefined]
+// ["o", index: 2, input: "olololo", groups: undefined]
+// ["o", index: 4, input: "olololo", groups: undefined]
+// ["o", index: 6, input: "olololo", groups: undefined]
+```
+
+
+Аргумент должен быть регулярным выражением, иначе будет выброшено исключение:
+```javascript
+'olololo'.matchAll('o')
+// Uncaught TypeError: o is not a regexp!
+```
+
 
 
 
