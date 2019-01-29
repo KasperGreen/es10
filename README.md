@@ -159,14 +159,17 @@ function isValidJSON(text) {
 }
 ```
 
-*Edge* пока не обновлён до *ES*10 и ожидаемо валится с ошибкой:
-![](https://habrastorage.org/webt/ez/l2/2d/ezl22di9ciu-4g60nlqyuqne7lk.png)
 
+![](https://habrastorage.org/webt/ez/l2/2d/ezl22di9ciu-4g60nlqyuqne7lk.png)
+<sup>*Edge* пока не обновлён до *ES*10 и ожидаемо валится с ошибкой</sup>
 
 
 Начиная с редакции *ES*10, круглые скобки можно опустить
-и ```catch``` станет как две капли воды похож на ```try```:
+и ```catch``` станет как две капли воды похож на ```try```.
+
 ![](https://habrastorage.org/webt/yi/ia/qg/yiiaqgiclyxz_i7bf3gq14dj-8m.png)
+<sup>Мой Chrome уже обновился до *ES*10, а местами и до *Stage* **3**. Дальше скриншоты будут из *Chrome*</sup>
+
 <spoiler title="исходный код">
 ```javascript
 function isValidJSON(text) {
@@ -179,7 +182,6 @@ function isValidJSON(text) {
 }
 ```
 </spoiler>
-<sup>Мой Chrome уже обновился до *ES*10, а местами и до *Stage* **3**. Дальше скриншоты тоже будут из *Chrome*</sup>
 
 
  
@@ -196,16 +198,30 @@ const symbol_link = Symbol("Symbol description")
 String(symbol_link) // "Symbol(Symbol description)"
 ```
 
-Теперь у символов появилось свойство description, доступное только для чтения:
+С *ES*10 у символов появилось свойство description, доступное только для чтения.
+Оно позволяет без всяких танцев с бубном получить описание символа:
 ```javascript
-symbol_link.description // Symbol description"
+symbol_link.description
+// "Symbol description"
+```
 
 
+В случае если описание не задано, вернётся — `undefined`
+```javascript
+const without_description_symbol_link = Symbol()
+without_description_symbol_link.description
+// undefined
+
+const empty_description_symbol_link = Symbol('')
+empty_description_symbol_link.description
+// ""
+```
  
  
 
 
 ### Строки EcmaScript совместимые с JSON
+
 <https://github.com/tc39/proposal-json-superset>
 
 EcmaScript до десятой редакции утверждает,
@@ -220,6 +236,8 @@ EcmaScript до десятой редакции утверждает,
 
 ![](https://habrastorage.org/webt/vc/yg/-v/vcyg-vy7larz8y4kswiqinjhfh4.png)
 
+ 
+
 C *ES*10 строками — всё в порядке:
 
 ![](https://habrastorage.org/webt/tc/he/tm/tchetmze4axxtp5wghm7pmz-0xc.png)
@@ -231,7 +249,7 @@ C *ES*10 строками — всё в порядке:
 
 ### Доработка прототипного метода `.toString()`
 
-http://tc39.github.io/Function-prototype-toString-revision/
+<http://tc39.github.io/Function-prototype-toString-revision/>
 
 <spoiler title="Цели изменений">
 * убрать обратно несовместимое требование:
@@ -297,13 +315,13 @@ Function.prototype.toString.call({});
  
 
 
-### Приватные\статические\публичные методы\свойства\атрибуты у классов.
+### Приватные\статические\публичные методы\свойства\атрибуты у классов
 
 <https://github.com/tc39/proposal-class-fields><br />
 <https://github.com/tc39/proposal-private-methods><br />
 <https://github.com/tc39/proposal-static-class-features><br />
 
-В некоторых языках есть договорённость называть приватные методы через видимый пробел. Например так:
+В некоторых языках есть договорённость называть приватные методы через видимый пробел <sup>(**_** — такая штука)</sup>. Например так:
 ```php
 <?php
 class AdultContent {
@@ -314,13 +332,13 @@ class AdultContent {
 	}
 	function __get($name) {
 		if($name === 'content') {
-			return " (age: ".$this->_age.") → ".$this->getContent()."\r\n";
+			return " (age: ".$this->_age.") → ".$this->_getContent()."\r\n";
 		}
 		else {
 			return 'without info';
 		}
 	}
-	private function getContent() {
+	private function _getContent() {
 		if($this->_contentIsAllowed()) {
 			return $this->_content;
 		}
@@ -350,6 +368,7 @@ echo $ObjectAdultContent->content;
 
 
 Напомню это только договорённость. Ничто не мешает использовать префикс для других целей или не использовать вовсе.
+Лично мне импонирует идея использовать видмый пробел в качестве префикса для функций, возвращающих `this`. Так их можно объединять в цепочку вызовов.
 
 Разработчики спецификации *EcmaScript* пошли дальше и сделали префикс-**октоторп** (**#**, решётка, хеш) частью синтаксиса.
 
