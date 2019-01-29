@@ -1,6 +1,7 @@
  
 ![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора —  от kasper.green & elfafeya.art](https://habrastorage.org/webt/j-/g9/na/j-g9nan1y54iew_qzum-eodzfgw.png)
- 
+        <sup><cite>Автор фото: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite></sup>
+
  
 
 
@@ -14,7 +15,11 @@
 
 •      **```.toString()```** — прототипный метод обновлён.
 
+
+
 ---------------------------
+
+
 
 ## Stage 3 — Pre-release <sup>[#](https://habr.com/ru/post/437806/#stage-3)</sup>
 
@@ -74,9 +79,11 @@
 ## Содержание
 
 *К сожалению Хабр не поддерживает текст до ката длиннее 2000 символов и ссылки не влезли.*
-*Дублирую содержание из шапки с проставленными ссылками для быстрой навигации*
+*Дублирую содержание из шапки с проставленными ссылками-октоторпами для быстрой навигации*
 
- ## Stage 4 — Final <sup>[#](#stage-4)</sup>
+-----------
+
+## Stage 4 — Final <sup>[#](#stage-4)</sup>
 
  •      **```catch```** — аргумент стал необязательным; <sup>[#](#neobyazatelnyy-argument-u-catch)</sup>
 
@@ -86,14 +93,9 @@
 
  •      **```.toString()```** — прототипный метод обновлён. <sup>[#](#dorabotka-prototipnogo-metoda-tostring)</sup>
 
- 
- -------------
- 
- 
+-------------
 
-
-
- ## Stage 3 — Pre-release <sup>[#](#stage-3)</sup>
+## Stage 3 — Pre-release <sup>[#](#stage-3)</sup>
 
  •      **```#```** —  приватное всё у классов, через октоторп; <sup>[#](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov)</sup>
 
@@ -177,7 +179,7 @@ function isValidJSON(text) {
 }
 ```
 </spoiler>
-<sup>* мой Chrome уже обновился до *ES*10, а местами и до *Stage* **3**. Последующие примеры будут в нём.
+<sup>* мой Chrome уже обновился до *ES*10, а местами и до *Stage* **3**. Дальше скриншоты тоже будут из *Chrome*</sup>
 
 
  
@@ -813,4 +815,4 @@ https://ru.wikipedia.org/wiki/ECMAScript
 
 
 ![Альтернативный вариант КДПВ с жёлтым магнитом от elfafeya.art](https://habrastorage.org/webt/nt/a4/y7/nta4y72u_f_kgtwon8jio9ghiwg.png)
-<cite>Автор фото: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite>
+       <sup><cite>Автор фото: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite></sup>
