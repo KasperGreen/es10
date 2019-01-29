@@ -1,5 +1,8 @@
+ 
 ![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора —  от kasper.green & elfafeya.art](https://habrastorage.org/webt/j-/g9/na/j-g9nan1y54iew_qzum-eodzfgw.png)
-        <cite>Фото: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite>
+ 
+ 
+
 
 ## Stage 4 — Final <sup>[#](https://habr.com/ru/post/437806/#stage-4)</sup>
 
@@ -42,6 +45,7 @@
 
 
 
+
 <cut />
 
 ----------------------
@@ -69,8 +73,8 @@
 
 ## Содержание
 
-*К сожалению Хабр не поддерживает текст до ката длиннее 2000 символов и ссылки не влезли.
- Дублирую содержание из шапки с проставленными ссылками*
+*К сожалению Хабр не поддерживает текст до ката длиннее 2000 символов и ссылки не влезли.*
+*Дублирую содержание из шапки с проставленными ссылками для быстрой навигации*
 
  ## Stage 4 — Final <sup>[#](#stage-4)</sup>
 
@@ -83,7 +87,10 @@
  •      **```.toString()```** — прототипный метод обновлён. <sup>[#](#dorabotka-prototipnogo-metoda-tostring)</sup>
 
  
+ -------------
  
+ 
+
 
 
  ## Stage 3 — Pre-release <sup>[#](#stage-3)</sup>
@@ -763,18 +770,32 @@ deep_deep_array.flat(100500)
 // ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
 ```
 
+ 
+
+
+
+---------
 
  
  
-
 
 
 
 ## Итоги
 
 *Stage* **4** привнёс скорее косметические изменения.
-Интерес представляет *Stage* **3** секция и большинство из предложений в хроме уже реализованы.
+Интерес представляет *Stage* **3** и большинство из предложений в *Chrome* уже реализованы.
 За исключением `Object.fromEntries()` наличие которого не критично и приватных свойств класса которые мы с нетерпением ждём.
+
+ 
+
+
+--------
+
+ 
+ 
+
+
 
 ## Материалы по теме
 
@@ -782,3 +803,13 @@ https://developer.okta.com/blog/2019/01/22/whats-new-in-es2019
 https://habr.com/ru/sandbox/113964/
 https://www.sitepoint.com/javascript-private-class-fields/
 https://ru.wikipedia.org/wiki/ECMAScript
+
+-------------
+
+
+ 
+ 
+
+
+![Альтернативный вариант КДПВ с жёлтым магнитом от elfafeya.art](https://habrastorage.org/webt/nt/a4/y7/nta4y72u_f_kgtwon8jio9ghiwg.png)
+<cite>Автор фото на КДПВ: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite>
