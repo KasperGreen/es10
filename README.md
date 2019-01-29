@@ -5,7 +5,7 @@
  
 
 
-## Stage 4 — Final <sup>[#](https://habr.com/ru/post/437806/#stage-4)</sup>
+## Stage 4 — Final <sup>[#](https://habr.com/ru/post/437806/#-stage-4)</sup>
 
 •      **```catch```** — аргумент стал необязательным;
 
@@ -21,7 +21,7 @@
 
 
 
-## Stage 3 — Pre-release <sup>[#](https://habr.com/ru/post/437806/#stage-3)</sup>
+## Stage 3 — Pre-release <sup>[#](https://habr.com/ru/post/437806/#-stage-3)</sup>
 
 
 •      **```#```** —  приватное всё у классов, через октоторп;
@@ -78,12 +78,14 @@
 
 ## Содержание
 
-*К сожалению Хабр не поддерживает текст до ката длиннее 2000 символов и ссылки не влезли.*
-*Дублирую содержание из шапки с проставленными ссылками-октоторпами для быстрой навигации*
+<sup>
+*К сожалению, а может к счастью, Хабр не поддерживает текст до ката длиннее 2000 символов и ссылки не влезли.*
+*Дублирую содержание из шапки с проставленными ссылками-октоторпами <sup>( # — такие штуки )</sup> для быстрой навигации.
+[пропустить навигацию](#-stage-4)*
+</sup>
 
------------
 
-## Stage 4 — Final <sup>[#](#stage-4)</sup>
+## Stage 4 — Final <sup>[#](#-stage-4)</sup>
 
  •      **```catch```** — аргумент стал необязательным; <sup>[#](#neobyazatelnyy-argument-u-catch)</sup>
 
@@ -95,7 +97,7 @@
 
 -------------
 
-## Stage 3 — Pre-release <sup>[#](#stage-3)</sup>
+## Stage 3 — Pre-release <sup>[#](#-stage-3)</sup>
 
  •      **```#```** —  приватное всё у классов, через октоторп; <sup>[#](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov)</sup>
 
@@ -127,16 +129,17 @@
 --------------------
 
 
+ 
+ 
 
 
 ## ֍ Stage 4
 
 Эти изменения уже вошли в стандарт.
 
+
  
  
-
-
 
 
 ### Необязательный аргумент у `catch`
@@ -145,7 +148,6 @@
 
 До *ES*10 блок ```catch``` требовал обязательного аргумента,
 для сбора информации об ошибке, даже если она не используется:
-
 ```javascript
 function isValidJSON(text) {
   try {
@@ -157,15 +159,13 @@ function isValidJSON(text) {
 }
 ```
 
-*Edge* пока не обновлён до *ES*10 и ожидаемо валится с ошибкой.
-
+*Edge* пока не обновлён до *ES*10 и ожидаемо валится с ошибкой:
 ![](https://habrastorage.org/webt/ez/l2/2d/ezl22di9ciu-4g60nlqyuqne7lk.png)
 
 
 
 Начиная с редакции *ES*10, круглые скобки можно опустить
 и ```catch``` станет как две капли воды похож на ```try```:
-
 ![](https://habrastorage.org/webt/yi/ia/qg/yiiaqgiclyxz_i7bf3gq14dj-8m.png)
 <spoiler title="исходный код">
 ```javascript
@@ -179,7 +179,7 @@ function isValidJSON(text) {
 }
 ```
 </spoiler>
-<sup>* мой Chrome уже обновился до *ES*10, а местами и до *Stage* **3**. Дальше скриншоты тоже будут из *Chrome*</sup>
+<sup>Мой Chrome уже обновился до *ES*10, а местами и до *Stage* **3**. Дальше скриншоты тоже будут из *Chrome*</sup>
 
 
  
@@ -199,11 +199,11 @@ String(symbol_link) // "Symbol(Symbol description)"
 Теперь у символов появилось свойство description, доступное только для чтения:
 ```javascript
 symbol_link.description // Symbol description"
-```
 
 
  
  
+
 
 ### Строки EcmaScript совместимые с JSON
 <https://github.com/tc39/proposal-json-superset>
@@ -227,7 +227,6 @@ C *ES*10 строками — всё в порядке:
 
  
  
-
 
 
 ### Доработка прототипного метода `.toString()`
@@ -285,6 +284,9 @@ Function.prototype.toString.call({});
 ----------
 
 
+ 
+ 
+
 
 ## ֍ Stage 3
 
@@ -292,6 +294,9 @@ Function.prototype.toString.call({});
 
 
  
+ 
+
+
 ### Приватные\статические\публичные методы\свойства\атрибуты у классов.
 
 <https://github.com/tc39/proposal-class-fields><br />
@@ -443,7 +448,6 @@ console.log(1);
 ```
 
 
-
  
  
 
@@ -513,7 +517,6 @@ typeof 123n;
  
 
 
-
 ### `globalThis` — новый способ доступа к глобальному контексту
 
 <https://github.com/tc39/proposal-global>
@@ -551,7 +554,6 @@ globalThis.myGLobalSettings
 ```
 
 
-
  
  
 
@@ -577,9 +579,10 @@ element.addEventListener('click', async () => {
 ```
 
 
+ 
+ 
 
- 
- 
+
 ### import.meta — мета-информация о загружаемом модуле.
 
 https://github.com/tc39/proposal-import-meta
@@ -592,7 +595,6 @@ console.log(import.meta);
 // { url: "file:///home/user/my-module.js" }
 ```
 Сейчас это только адрес по которому модуль был загружен.
-
 
 
  
@@ -608,6 +610,7 @@ https://github.com/tc39/proposal-object-from-entries
 Object.fromPairs([['key_1', 1], ['key_2', 2]])
 // {key_1: 1; key_2: 2}
 ```
+
 
  
  
@@ -635,10 +638,9 @@ JSON.stringify('\uDEAD')
 Такого быть не должно и новая спецификация это исправляет. *Edge* и *Chrome* уже обновились.
 
 
-
-
  
  
+
 
 ### Устаревшие возможности RegExp
 
@@ -646,11 +648,9 @@ https://github.com/tc39/proposal-regexp-legacy-features
 
 Спецификация для устаревших функций *RegExp*, вроде `RegExp.$1а` также `RegExp.prototype.compile` метода.
 
+
  
  
-
-
-
 
 
 ### Прототипные методы строк `.trimStart()` и `.trimEnd()`
@@ -717,13 +717,9 @@ for(const item of string_for_searh.matchAll(/o/)) {
 ```
 
 
-
-
- 
-
-
  
  
+
 
 ### Одномерные массивы с `.flat()` и `.flatMap()`
 
