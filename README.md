@@ -33,7 +33,7 @@
 
  •      [**```'строки EcmaScript'```** — улучшенная совместимость с **JSON** форматом](#stroki-ecmascript-sovmestimye-s-json);
 
- •      [**```.toString()```** — прототипный метод обновлён. <sup>[#](#dorabotka-prototipnogo-metoda-tostring).
+ •      [**```.toString()```** — прототипный метод обновлён](#dorabotka-prototipnogo-metoda-tostring).
 
 -------------
 
