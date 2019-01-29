@@ -1,113 +1,67 @@
+
+Стандартизация JS перешла на годичный цикл обновлений,
+а значит начало года — отличное время для того чтобы узнать,
+что нас ждёт в юбилейной — уже десятой редакции EcmaScript!
+
+*ES*9 - [актуальная версия спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+
+*ES*10 — всё ещё [черновик](https://tc39.github.io/ecma262/)
+
+
+На сегодняшний день в [*Stage* **4**](https://habr.com/ru/post/437806/#-stage-4) — всего несколько предложений.
+
+А в [*Stage* **3**](https://habr.com/ru/post/437806/#-stage-3) — целая дюжина!
+
+Из них на мой взгляд самые интересные — [приватные поля классов](https://habr.com/ru/post/437806/#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov), [шебанг грамматика для скриптов](https://habr.com/ru/post/437806/#shebang-grammatika), [числа произвольной точности](https://habr.com/ru/post/437806/#bolshie-chisla-s-bigint), [доступ к глобальному контексту](https://habr.com/ru/post/437806/#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu) и [динамические импорты](https://habr.com/ru/post/437806/#dinamicheskiy-importdynamic).
+
+
  
 ![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора —  от kasper.green & elfafeya.art](https://habrastorage.org/webt/j-/g9/na/j-g9nan1y54iew_qzum-eodzfgw.png)
         <sup><cite>Автор фото: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite></sup>
 
- 
-
-Стандартизация JS перешла на годичный цикл обновлений,
-а значит начало года — отличное время для того чтобы узнать,
-что нас ждёт в юбилейной уже десятой редакции EcmaScript!
-
-На данный момент [актуальная версия спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm) — *ES*9.
-ES10 всё ещё [черновик](https://tc39.github.io/ecma262/).
-
-На сегодняшний день в финальной стадии не так много предложений.
-Отдельный интерес представляют предложения достигшие статуса кандидатов в финальную версию.
-Приватные поля классов, шебанг грамматика для скриптов, числа произвольной точности, доступ к глобальному контексту и динамические импорты.
-
-
-
-
-
-## Stage 4 — Final <sup>[#](https://habr.com/ru/post/437806/#-stage-4)</sup>
-
-•      **```catch```** — аргумент стал необязательным;
-
-•      **```Symbol().description```** — акцессор к описанию символа;
-
-•      **```'строки EcmaScript'```** — улучшенная совместимость с **JSON** форматом;
-
-•      **```.toString()```** — прототипный метод обновлён.
-
-
-
----------------------------
-
-
-
-## Stage 3 — Pre-release <sup>[#](https://habr.com/ru/post/437806/#-stage-3)</sup>
-
-
-•      **```#```** —  приватное всё у классов, через октоторп;
-
-•      **```#!/usr/bin/env node```**  — шебанг грамматика для скриптов;
-
-•      **```BigInt()```** — новый примитив, для чисел произвольной точности;
-
-•      **```globalThis```** — новый способ доступа к глобальному контексту;
-
-•      **```import(dynamic)```** — динамический импорт;
-
-•      **```import.meta```** — мета-информация о загружаемом модуле;
-
-•      **```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение;
-
-•      **```JSON.stringify()```** — фикс метода;
-
-•      **```RegExp```** — устаревшие возможности;
-
-•      **```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк;
-
-•      **```.matchAll()```** — **```.match()```** с глобальным флагом;
-
-•      **```.flat()```** и **```.flatMap()```** — прототипные методы массивов.
-
-
-
-
 <cut />
-
-
 
 ## Содержание
 
-## Stage 4 — Final <sup>[#](#-stage-4)</sup>
+### [Пять стадий](#pyat-stadiy)
 
- •      **```catch```** — аргумент стал необязательным; <sup>[#](#neobyazatelnyy-argument-u-catch)</sup>
+### [Stage 4 — Final](#-stage-4)
 
- •      **```Symbol().description```** — акцессор к описанию символа; <sup>[#](#dostup-k-opisaniyu-simvolnoy-ssylki)</sup>
+ •      [**```catch```** — аргумент стал необязательным](#neobyazatelnyy-argument-u-catch);
 
- •      **```'строки EcmaScript'```** — улучшенная совместимость с **JSON** форматом; <sup>[#](#stroki-ecmascript-sovmestimye-s-json)</sup>
+ •      [**```Symbol().description```** — акцессор к описанию символа](#dostup-k-opisaniyu-simvolnoy-ssylki);
 
- •      **```.toString()```** — прототипный метод обновлён. <sup>[#](#dorabotka-prototipnogo-metoda-tostring)</sup>
+ •      [**```'строки EcmaScript'```** — улучшенная совместимость с **JSON** форматом](#stroki-ecmascript-sovmestimye-s-json);
+
+ •      [**```.toString()```** — прототипный метод обновлён. <sup>[#](#dorabotka-prototipnogo-metoda-tostring).
 
 -------------
 
-## Stage 3 — Pre-release <sup>[#](#-stage-3)</sup>
+### [Stage 3 — Pre-release](#-stage-3)
 
- •      **```#```** —  приватное всё у классов, через октоторп; <sup>[#](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov)</sup>
+ •      [**```#```** —  приватное всё у классов, через октоторп](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov);
 
- •      **```#!/usr/bin/env node```**  — шебанг грамматика для скриптов; <sup>[#](#shebang-grammatika)</sup>
+ •      [**```#!/usr/bin/env node```**  — шебанг грамматика для скриптов](#shebang-grammatika);
 
- •      **```BigInt()```** — новый примитив, для чисел произвольной точности; <sup>[#](#bolshie-chisla-s-bigint)</sup>
+ •      [**```BigInt()```** — новый примитив, для чисел произвольной точности](#bolshie-chisla-s-bigint);
 
- •      **```globalThis```** — новый способ доступа к глобальному контексту; <sup>[#](#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu)</sup>
+ •      [**```globalThis```** — новый способ доступа к глобальному контексту](#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu);
 
- •      **```import(dynamic)```** — динамический импорт; <sup>[#](#dinamicheskiy-importdynamic)</sup>
+ •      [**```import(dynamic)```** — динамический импорт](#dinamicheskiy-importdynamic);
 
- •      **```import.meta```** — мета-информация о загружаемом модуле; <sup>[#](#importmeta--meta-informaciya-o-zagruzhaemom-module)</sup>
+ •      [**```import.meta```** — мета-информация о загружаемом модуле](#importmeta--meta-informaciya-o-zagruzhaemom-module);
 
- •      **```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение; <sup>[#](#sozdanie-obekta-metodom-objectfromentries)</sup>
+ •      [**```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение](#sozdanie-obekta-metodom-objectfromentries);
 
- •      **```JSON.stringify()```** — фикс метода; <sup>[#](#fiks-metoda-jsonstringify)</sup>
+ •      [**```JSON.stringify()```** — фикс метода](#fiks-metoda-jsonstringify);
 
- •      **```RegExp```** — устаревшие возможности; <sup>[#](#ustarevshie-vozmozhnosti-regexp)</sup>
+ •      [**```RegExp```** — устаревшие возможности](#ustarevshie-vozmozhnosti-regexp);
 
- •      **```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк; <sup>[#](#prototipnye-metody-strok-trimstart-i-trimend)</sup>
+ •      [**```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк](#prototipnye-metody-strok-trimstart-i-trimend);
 
- •      **```.matchAll()```** — **```.match()```** с глобальным флагом; <sup>[#](#matchall--novyy-prototipnyy-metod-strok)</sup>
+ •      [**```.matchAll()```** — **```.match()```** с глобальным флагом](#matchall--novyy-prototipnyy-metod-strok);
 
- •      **```.flat()```** и **```.flatMap()```** — прототипные методы массивов. <sup>[#](#odnomernye-massivy-s-flat-i-flatmap)</sup>
+ •      [**```.flat()```** и **```.flatMap()```** — прототипные методы массивов](#odnomernye-massivy-s-flat-i-flatmap).
 
 
 
@@ -116,7 +70,7 @@ ES10 всё ещё [черновик](https://tc39.github.io/ecma262/).
 
 
 
-## Пять стадий:
+## Пять стадий
 
     <sub>*Stage*</sub> **0**   ↓  &thinsp;**Strawman**  <sup>**Наметка**</sup>          &thinsp;Идея которую можно реализовать через **Babel**-плагин.;
 
@@ -204,7 +158,7 @@ const symbol_link = Symbol("Symbol description")
 String(symbol_link) // "Symbol(Symbol description)"
 ```
 
-С *ES*10 у символов появилось свойство description, доступное только для чтения.
+Начиная с *ES*10 у символов появилось свойство description, доступное только для чтения.
 Оно позволяет без всяких танцев с бубном получить описание символа:
 ```javascript
 symbol_link.description
@@ -840,6 +794,7 @@ https://www.sitepoint.com/javascript-private-class-fields/
 https://ru.wikipedia.org/wiki/ECMAScript
 https://habr.com/ru/company/ruvds/blog/431872/
 https://medium.com/devschacht/javascripts-new-private-class-fields-c60daffe361b
+https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B1%D0%B0%D0%BD%D0%B3_(Unix)
 
 -------------
 
