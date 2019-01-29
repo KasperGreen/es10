@@ -1,19 +1,20 @@
 ![КДПВ: Жёлтый магнит с надписью «JS ES10» на экране монитора —  от kasper.green & elfafeya.art](https://habrastorage.org/webt/j-/g9/na/j-g9nan1y54iew_qzum-eodzfgw.png)
         <cite>Фото: kasper.green; Жёлтый магнит: elfafeya.art & kasper.green</cite>
 
-## Stage 4 — Final
+## Stage 4 — Final <sup>[#](https://habr.com/ru/post/437806/#stage-4)</sup>
 
-•      **```catch```** — аргумент стал необязательным; <sup>[#](#neobyazatelnyy-argument-u-catch)</sup>
+•      **```catch```** — аргумент стал необязательным;
 
 •      **```Symbol().description```** — акцессор к описанию символа;
 
-•      **```'строки EcmaScript'```** — улучшеная совместимость с **JSON** форматом; <sup>[#](#stroki-ecmascript-sovmestimye-s-json)</sup>
+•      **```'строки EcmaScript'```** — улучшеная совместимость с **JSON** форматом;
 
 •      **```.toString()```** — прототипный метод обновлён.
 
 ---------------------------
 
-## Stage 3 — Pre-release
+## Stage 3 — Pre-release <sup>[#](https://habr.com/ru/post/437806/#stage-3)</sup>
+
 
 •      **```#```** —  приватное всё у классов, через октоторп;
 
@@ -27,7 +28,9 @@
 
 •      **```import.meta```** — мета-информация о загружаемом модуле;
 
-•      **```Object.fromEntries()```** — создание объекта через массив пар — ключ\значение;
+•      **```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение;
+
+•      **```JSON.stringify()```** — фикс методжа;
 
 •      **```RegExp```** — устаревшие возможности;
 
@@ -63,6 +66,56 @@
 ----------------------------
 
 
+
+## Содержание
+
+*К сожалению Хабр не поддерживает текст до ката длиннее 2000 символов и ссылки не влезли.
+ Дублирую содержание из шапки с проставленными ссылками*
+
+ ## Stage 4 — Final <sup>[#](#stage-4)</sup>
+
+ •      **```catch```** — аргумент стал необязательным; <sup>[#](#neobyazatelnyy-argument-u-catch)</sup>
+
+ •      **```Symbol().description```** — акцессор к описанию символа; <sup>[#](#dostup-k-opisaniyu-simvolnoy-ssylki)</sup>
+
+ •      **```'строки EcmaScript'```** — улучшеная совместимость с **JSON** форматом; <sup>[#](#stroki-ecmascript-sovmestimye-s-json)</sup>
+
+ •      **```.toString()```** — прототипный метод обновлён. <sup>[#](#dorabotka-prototipnogo-metoda-tostring)</sup>
+
+ 
+ 
+
+
+ ## Stage 3 — Pre-release <sup>[#](#stage-3)</sup>
+
+ •      **```#```** —  приватное всё у классов, через октоторп; <sup>[#](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov)</sup>
+
+ •      **```#!/usr/bin/env node```**  — шебанг грамматика для скриптов; <sup>[#](#shebang-grammatika)</sup>
+
+ •      **```BigInt()```** — новый примитив, для чисел произвольной точности; <sup>[#](#bolshie-chisla-s-bigint)</sup>
+
+ •      **```globalThis```** — новый способ доступа к глобальному контексту; <sup>[#](#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu)</sup>
+
+ •      **```import(dynamic)```** — динамический импорт; <sup>[#](#dinamicheskie-importy)</sup>
+
+ •      **```import.meta```** — мета-информация о загружаемом модуле; <sup>[#](#importmeta--metainformaciya-o-zagruzhaemom-module)</sup>
+
+ •      **```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение; <sup>[#](#sozdanie-obekta-metodom-objectfromentries)</sup>
+
+ •      **```JSON.stringify()```** — фикс методжа; <sup>[#](#fiks-metoda-jsonstringify)</sup>
+
+ •      **```RegExp```** — устаревшие возможности; <sup>[#](#ustarevshie-vozmozhnosti-regexp)</sup>
+
+ •      **```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк; <sup>[#](#prototipnye-metody-strok-trimstart-i-trimend)</sup>
+
+ •      **```.matchAll()```** — **```.match()```** с глобальным флагом; <sup>[#](#matchall--novyy-prototipnyy-metod-strok)</sup>
+
+ •      **```.flat()```** и **```.flatMap()```** — прототипные методы массивов. <sup>[#](#odnomernye-massivy-s-flat-i-flatmap)</sup>
+
+
+
+
+--------------------
 
 
 
@@ -124,6 +177,25 @@ function isValidJSON(text) {
  
 
 
+## Доступ к описанию символьной ссылки
+
+<https://tc39.github.io/proposal-Symbol-description/>
+
+Описание символьной ссылки можно косвенно получить методом toString():
+```javascript
+const symbol_link = Symbol("Symbol description")
+String(symbol_link) // "Symbol(Symbol description)"
+```
+
+Теперь у символов появилось свойство description, доступное только для чтения:
+```javascript
+symbol_link.description // Symbol description"
+```
+
+
+ 
+ 
+
 ### Строки EcmaScript совместимые с JSON
 <https://github.com/tc39/proposal-json-superset>
 
@@ -148,24 +220,6 @@ C *ES*10 строками — всё в порядке:
  
 
 
-## Доступ к описанию символьной ссылки
-
-<https://tc39.github.io/proposal-Symbol-description/>
-
-Описание символьной ссылки можно косвенно получить методом toString():
-```javascript
-const symbol_link = Symbol("Symbol description")
-String(symbol_link) // "Symbol(Symbol description)"
-```
-
-Теперь у символов появилось свойство description, доступное только для чтения:
-```javascript
-symbol_link.description // Symbol description"
-```
-
-
- 
- 
 
 ### Доработка прототипного метода `.toString()`
 
@@ -358,21 +412,24 @@ console.log(AdultContentForAdult.content)
  
  
 
-### Прототипные методы строк `.trimStart()` и `.trimEnd()`
+### Шебанг грамматика
 
-<https://github.com/tc39/proposal-string-left-right-trim>
+https://github.com/tc39/proposal-hashbang
 
-<sup>* *уже добавлено в Chrome*</sup>
-
-
-По аналогии с методами `.padStart()` и `.padEnd()` обрезают пробельные символы в начале и конце строки соответственно.
-
+Хешбэнг — знакомый юниксойдам способ указать интерпритатор для испоняемого файла
 ```javascript
-const one = "      hello and let ";
-const two = "us begin.        ";
-console.log( one.trimStart() + two.trimEnd() )
-// "hello and let us begin."
+#!/usr/bin/env node
+// в скрипте
+'use strict';
+console.log(1);
 ```
+```javascript
+#!/usr/bin/env node
+// в модуле
+export {};
+console.log(1);
+```
+
 
 
  
@@ -445,60 +502,6 @@ typeof 123n;
 
 
 
-### Одномерные массивы с `.flat()` и `.flatMap()`
-
-https://github.com/tc39/proposal-flatMap
-
-<sup>* *уже добавлено в Chrome*</sup>
-
-Массив обзавёлся прототипами `.flat()` и `.flatMap()`, которые в целом  похожи на реализации в *lodash*,
-но всё же имеют некотые отличия. Необязательный аргумент — устанавливает максимальную глубину обхода дерева.
-
-```javascript
-const deep_deep_array = [
-  '≥0 — первый уровень',
-  [
-    '≥1 — второй уровень',
-    [
-      '≥2 — третий уровень',
-      [
-        '≥3 — четвёртый уровень',
-        [
-          '≥4 — пятый уровень'
-        ]
-      ]
-    ]
-  ]
-]
-
-// 0 — вернёт массив безизменений
-deep_deep_array.flat(0)
-//  ["≥0 — первый уровень", Array(2)]
-
-// 1 — глубина по умолчанию
-deep_deep_array.flat()
-//  ["первый уровень", "второй уровень", Array(2)]
-
-deep_deep_array.flat(2)
-//  ["первый уровень", "второй уровень", "третий уровень", Array(2)]
-
-deep_deep_array.flat(100500)
-// ["первый уровень", "второй уровень", "третий уровень", "четвёртый уровень", "пятый уровень"]
-```
-
-.flatMap  не экфивалентно последовательному вызову .flat().map().
-```javascript
-['Hello', 'World'].flatMap(word => [...word])
-// ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
-```
-
-
- 
- 
-
-
-
-
 ### `globalThis` — новый способ доступа к глобальному контексту
 
 <https://github.com/tc39/proposal-global>
@@ -535,6 +538,126 @@ globalThis.myGLobalSettings
 //{it_is_cool: true}
 ```
 
+
+
+ 
+ 
+
+
+### Динамические импорты
+
+<https://github.com/tc39/proposal-dynamic-import>
+
+<sup>* *уже добавлено в Chrome*</sup>
+
+Хотелось переменные в строках импорта‽
+```javascript
+import(`./language-packs/${navigator.language}.js`)
+```
+
+Динамический импорт возвращает промис, который после загрузки модуля возвращает его в функцию обратного вызова:
+```javascript
+element.addEventListener('click', async () => {
+    // можно использовать await синтаксис для промиса
+    const module = await import(`./events_scripts/supperButtonClickEvent.js`)
+    module.clickEvent()
+})
+```
+
+
+
+ 
+ 
+### import.meta — метаинформация о загружаемом модуле.
+
+https://github.com/tc39/proposal-import-meta
+
+<sup>* *уже добавлено в Chrome*</sup>
+
+В коде загружаемого модуля стало возможно получить информацию по нему
+```javascript
+console.log(import.meta);
+// { url: "file:///home/user/my-module.js" }
+```
+Сейчас это только адрес по которому модуль был загружен.
+Сработает этот код единожды при первой загрузке модуля.
+
+
+
+ 
+ 
+
+
+### Создание объекта методом `Object.fromEntries()`
+
+https://github.com/tc39/proposal-object-from-entries
+
+Аналог `_.fromPairs` из `lodash`
+```javascript
+Object.fromPairs([['key_1', 1], ['key_2', 2]])
+// {key_1: 1; key_2: 2}
+```
+
+ 
+ 
+
+
+###  Фикс метода `JSON.stringify()`
+
+https://github.com/tc39/proposal-well-formed-stringify
+
+В разделе [8.1 RFC 8259](https://tools.ietf.org/html/rfc8259#section-8.1) требуется,
+чтобы текст *JSON*, обмениваемый за пределами замкнутой экосистемы,
+кодировался с использованием UTF-8, но JSON.stringify может возвращать строки,
+содержащие кодовые точки, которые не представлены в UTF-8
+(в частности, суррогатные кодовые точки от U+D800 до U+DFFF)
+
+Так строка `\uDF06\uD834` после обработки JSON.stringify() превращается в `\\udf06\\ud834`
+
+```javascript
+/* Непарные сурогатные единицы будут сериализованы с экранированием последовательностей */
+JSON.stringify('\uDF06\uD834')
+'"\\udf06\\ud834"'
+JSON.stringify('\uDEAD')
+'"\\udead"'
+```
+
+Такого быть не должно и новая спецификация это исправляет. *Edge* и *Chrome* уже обновились.
+
+
+
+
+ 
+ 
+
+### Устаревшие возможности RegExp
+
+https://github.com/tc39/proposal-regexp-legacy-features
+
+Спецификация для устаревших функций *RegExp*, вроде `RegExp.$1а` также `RegExp.prototype.compile` метода.
+
+ 
+ 
+
+
+
+
+
+### Прототипные методы строк `.trimStart()` и `.trimEnd()`
+
+<https://github.com/tc39/proposal-string-left-right-trim>
+
+<sup>* *уже добавлено в Chrome*</sup>
+
+
+По аналогии с методами `.padStart()` и `.padEnd()` обрезают пробельные символы в начале и конце строки соответственно.
+
+```javascript
+const one = "      hello and let ";
+const two = "us begin.        ";
+console.log( one.trimStart() + two.trimEnd() )
+// "hello and let us begin."
+```
 
 
  
@@ -592,121 +715,58 @@ for(const item of string_for_searh.matchAll(/o/)) {
  
  
 
-### Динамические импорты
+### Одномерные массивы с `.flat()` и `.flatMap()`
 
-<https://github.com/tc39/proposal-dynamic-import>
-
-<sup>* *уже добавлено в Chrome*</sup>
-
-Переменные в строках импорта:
-```javascript
-import(`./language-packs/${navigator.language}.js`)
-```
-
-Отложенный импорт возвращает промис, который после загрузки модуля возвращает его в функцию обратного вызова:
-```javascript
-element.addEventListener('click', async () => {
-    // можно использовать await синтаксис для промиса
-    const module = await import(`./events_scripts/supperButtonClickEvent.js`)
-    module.clickEvent()
-})
-```
-
-
-
- 
- 
-### import.meta — метаинформация о загружаемом модуле.
-
-https://github.com/tc39/proposal-import-meta
+https://github.com/tc39/proposal-flatMap
 
 <sup>* *уже добавлено в Chrome*</sup>
 
-В коде загружаемого модуля стало возможно получить информацию по нему
+Массив обзавёлся прототипами `.flat()` и `.flatMap()`, которые в целом  похожи на реализации в *lodash*,
+но всё же имеют некотые отличия. Необязательный аргумент — устанавливает максимальную глубину обхода дерева.
+
 ```javascript
-console.log(import.meta);
-// { url: "file:///home/user/my-module.js" }
+const deep_deep_array = [
+  '≥0 — первый уровень',
+  [
+    '≥1 — второй уровень',
+    [
+      '≥2 — третий уровень',
+      [
+        '≥3 — четвёртый уровень',
+        [
+          '≥4 — пятый уровень'
+        ]
+      ]
+    ]
+  ]
+]
+
+// 0 — вернёт массив безизменений
+deep_deep_array.flat(0)
+//  ["≥0 — первый уровень", Array(2)]
+
+// 1 — глубина по умолчанию
+deep_deep_array.flat()
+//  ["первый уровень", "второй уровень", Array(2)]
+
+deep_deep_array.flat(2)
+//  ["первый уровень", "второй уровень", "третий уровень", Array(2)]
+
+deep_deep_array.flat(100500)
+// ["первый уровень", "второй уровень", "третий уровень", "четвёртый уровень", "пятый уровень"]
 ```
-Сейчас это только адрес по которому модуль был загружен.
-Сработает этот код единожды при первой загрузке модуля.
 
-
-
- 
- 
-
-
-### Создание объекста через `Object.fromEntries()`
-
-https://github.com/tc39/proposal-object-from-entries
-
-Аналог `_.fromPairs` из `lodash`
+`.flatMap()`  не экфивалентен последовательному вызову `.flat().map()`.
+Функция обратного вызова, передаваемая в метод, должна возвращать массив который станет частью общего плоского массива:
 ```javascript
-Object.fromPairs([['key_1', 1], ['key_2', 2]])
-// {key_1: 1; key_2: 2}
-```
-
- 
- 
-
-
-### Шебанг грамматика
-
-https://github.com/tc39/proposal-hashbang
-
-Хешбэнг — знакомый юниксойдам способ указать интерпритатор для испоняемого файла
-```javascript
-#!/usr/bin/env node
-// в скрипте
-'use strict';
-console.log(1);
-```
-```javascript
-#!/usr/bin/env node
-// в модуле
-export {};
-console.log(1);
+['Hello', 'World'].flatMap(word => [...word])
+// ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
 ```
 
 
-
  
  
 
-
-### `JSON.stringfy()` — фикс метода
-
-https://github.com/tc39/proposal-well-formed-stringify
-
-В разделе [8.1 RFC 8259](https://tools.ietf.org/html/rfc8259#section-8.1) требуется,
-чтобы текст *JSON*, обмениваемый за пределами замкнутой экосистемы,
-кодировался с использованием UTF-8, но JSON.stringify может возвращать строки,
-содержащие кодовые точки, которые не представлены в UTF-8
-(в частности, суррогатные кодовые точки от U+D800 до U+DFFF)
-
-Так строка `\uDF06\uD834` после обработки JSON.stringify() превращается в `\\udf06\\ud834`
-
-```javascript
-/* Непарные сурогатные единицы будут сериализованы с экранированием последовательностей */
-JSON.stringify('\uDF06\uD834')
-'"\\udf06\\ud834"'
-JSON.stringify('\uDEAD')
-'"\\udead"'
-```
-
-Такого быть не должно и новая спецификация это исправляет. *Edge* и *Chrome* уже обновились.
-
-
-
-
- 
- 
-
-### Устаревшие возможности RegExp в JavaScript
-
-https://github.com/tc39/proposal-regexp-legacy-features
-
-Спецификация для устаревших функций RegExp в JavaScript, вроде RegExp.$1а также RegExp.prototype.compile метода.
 
 
 
@@ -719,5 +779,6 @@ https://github.com/tc39/proposal-regexp-legacy-features
 ## Материалы по теме
 
 https://developer.okta.com/blog/2019/01/22/whats-new-in-es2019
-
-
+https://habr.com/ru/sandbox/113964/
+https://www.sitepoint.com/javascript-private-class-fields/
+https://ru.wikipedia.org/wiki/ECMAScript
