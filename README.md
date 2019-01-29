@@ -358,9 +358,12 @@ console.log(AdultContentForAdult.content)
  
  
 
-## Прототипные методы строк `.trimStart()` и `.trimEnd()`
+### Прототипные методы строк `.trimStart()` и `.trimEnd()`
 
 <https://github.com/tc39/proposal-string-left-right-trim>
+
+<sup>* *уже добавлено в Chrome*</sup>
+
 
 По аналогии с методами `.padStart()` и `.padEnd()` обрезают пробельные символы в начале и конце строки соответственно.
 
@@ -442,7 +445,7 @@ typeof 123n;
 
 
 
-## Одномерные массивы с `.flat()` и `.flatMap()`
+### Одномерные массивы с `.flat()` и `.flatMap()`
 
 https://github.com/tc39/proposal-flatMap
 
@@ -496,7 +499,7 @@ deep_deep_array.flat(100500)
 
 
 
-## `globalThis` — новый способ доступа к глобальному контексту
+### `globalThis` — новый способ доступа к глобальному контексту
 
 <https://github.com/tc39/proposal-global>
 
@@ -538,7 +541,7 @@ globalThis.myGLobalSettings
  
 
 
-## .matchAll() — новый прототипный метод строк
+### .matchAll() — новый прототипный метод строк
 
 https://github.com/tc39/proposal-string-matchall
 
@@ -586,25 +589,132 @@ for(const item of string_for_searh.matchAll(/o/)) {
  
 
 
+ 
+ 
+
+### Динамические импорты
+
+<https://github.com/tc39/proposal-dynamic-import>
+
+<sup>* *уже добавлено в Chrome*</sup>
+
+Переменные в строках импорта:
+```javascript
+import(`./language-packs/${navigator.language}.js`)
+```
+
+Отложенный импорт возвращает промис, который после загрузки модуля возвращает его в функцию обратного вызова:
+```javascript
+element.addEventListener('click', async () => {
+    // можно использовать await синтаксис для промиса
+    const module = await import(`./events_scripts/supperButtonClickEvent.js`)
+    module.clickEvent()
+})
+```
+
+
+
+ 
+ 
+### import.meta — метаинформация о загружаемом модуле.
+
+https://github.com/tc39/proposal-import-meta
+
+<sup>* *уже добавлено в Chrome*</sup>
+
+В коде загружаемого модуля стало возможно получить информацию по нему
+```javascript
+console.log(import.meta);
+// { url: "file:///home/user/my-module.js" }
+```
+Сейчас это только адрес по которому модуль был загружен.
+Сработает этот код единожды при первой загрузке модуля.
+
+
+
+ 
+ 
+
+
+### Создание объекста через `Object.fromEntries()`
+
+https://github.com/tc39/proposal-object-from-entries
+
+Аналог `_.fromPairs` из `lodash`
+```javascript
+Object.fromPairs([['key_1', 1], ['key_2', 2]])
+// {key_1: 1; key_2: 2}
+```
+
+ 
+ 
+
+
+### Шебанг грамматика
+
+https://github.com/tc39/proposal-hashbang
+
+Хешбэнг — знакомый юниксойдам способ указать интерпритатор для испоняемого файла
+```javascript
+#!/usr/bin/env node
+// в скрипте
+'use strict';
+console.log(1);
+```
+```javascript
+#!/usr/bin/env node
+// в модуле
+export {};
+console.log(1);
+```
+
+
+
+ 
+ 
+
+
+### `JSON.stringfy()` — фикс метода
+
+https://github.com/tc39/proposal-well-formed-stringify
+
+В разделе [8.1 RFC 8259](https://tools.ietf.org/html/rfc8259#section-8.1) требуется,
+чтобы текст *JSON*, обмениваемый за пределами замкнутой экосистемы,
+кодировался с использованием UTF-8, но JSON.stringify может возвращать строки,
+содержащие кодовые точки, которые не представлены в UTF-8
+(в частности, суррогатные кодовые точки от U+D800 до U+DFFF)
+
+Так строка `\uDF06\uD834` после обработки JSON.stringify() превращается в `\\udf06\\ud834`
+
+```javascript
+/* Непарные сурогатные единицы будут сериализованы с экранированием последовательностей */
+JSON.stringify('\uDF06\uD834')
+'"\\udf06\\ud834"'
+JSON.stringify('\uDEAD')
+'"\\udead"'
+```
+
+Такого быть не должно и новая спецификация это исправляет. *Edge* и *Chrome* уже обновились.
 
 
 
 
+ 
+ 
+
+### Устаревшие возможности RegExp в JavaScript
+
+https://github.com/tc39/proposal-regexp-legacy-features
+
+Спецификация для устаревших функций RegExp в JavaScript, вроде RegExp.$1а также RegExp.prototype.compile метода.
 
 
 
+## Итоги
 
-
-
-
-
-
-
-
-
-
-
-
+*Stage* **4** привнёс скорее косметические изменения.
+Интерес представляет *Stage* **3** секция и большинство из предложений в хроме уже реализованы.
+За исключением `Object.fromEntries()` наличие которого не критично и приватных свойств класса которые мы с нетерпением ждём.
 
 ## Материалы по теме
 
