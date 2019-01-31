@@ -6,11 +6,11 @@
 *ES*10 — всё ещё [черновик](https://tc39.github.io/ecma262/)
 
 
-На сегодняшний день в [*Stage* **4**<sup>#</sup>](https://habr.com/ru/post/437806/#-stage-4) — всего несколько предложений.
+На сегодняшний день в [*Stage* **4**<sup> #</sup>](https://habr.com/ru/post/437806/#-stage-4) — всего несколько предложений.
 
-А в [*Stage* **3**<sup>#</sup>](https://habr.com/ru/post/437806/#-stage-3) — целая дюжина!
+А в [*Stage* **3**<sup> #</sup>](https://habr.com/ru/post/437806/#-stage-3) — целая дюжина!
 
-Из них, на мой взгляд, самые интересные — [приватные поля классов<sup>#</sup>](https://habr.com/ru/post/437806/#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov), [шебанг грамматика для скриптов<sup>#</sup>](https://habr.com/ru/post/437806/#shebang-grammatika), [числа произвольной точности<sup>#</sup>](https://habr.com/ru/post/437806/#bolshie-chisla-s-bigint), [доступ к глобальному контексту<sup>#</sup>](https://habr.com/ru/post/437806/#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu) и [динамические импорты<sup>#</sup>](https://habr.com/ru/post/437806/#dinamicheskiy-importdynamic).
+Из них, на мой взгляд, самые интересные — [приватные поля классов<sup> #</sup>](https://habr.com/ru/post/437806/#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov), [шебанг грамматика для скриптов<sup> #</sup>](https://habr.com/ru/post/437806/#shebang-grammatika), [числа произвольной точности<sup> #</sup>](https://habr.com/ru/post/437806/#bolshie-chisla-s-bigint), [доступ к глобальному контексту<sup> #</sup>](https://habr.com/ru/post/437806/#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu) и [динамические импорты<sup> #</sup>](https://habr.com/ru/post/437806/#dinamicheskiy-importdynamic).
 
 
  
@@ -21,48 +21,48 @@
 
 ## Содержание
 
-### [Пять стадий<sup>#</sup>](#pyat-stadiy)
+### [Пять стадий<sup> #</sup>](#pyat-stadiy)
 
-### [Stage 4 — Final<sup>#</sup>](#-stage-4)
+### [Stage 4 — Final<sup> #</sup>](#-stage-4)
 
- •      [**```catch```** — аргумент стал необязательным<sup>#</sup>](#neobyazatelnyy-argument-u-catch);
+ •      [**```catch```** — аргумент стал необязательным<sup> #</sup>](#neobyazatelnyy-argument-u-catch);
 
- •      [**```Symbol().description```** — акцессор к описанию символа<sup>#</sup>](#dostup-k-opisaniyu-simvolnoy-ssylki);
+ •      [**```Symbol().description```** — акцессор к описанию символа<sup> #</sup>](#dostup-k-opisaniyu-simvolnoy-ssylki);
 
- •      [**```'строки EcmaScript'```** — улучшенная совместимость с **JSON** форматом<sup>#</sup>](#stroki-ecmascript-sovmestimye-s-json);
+ •      [**```'строки EcmaScript'```** — улучшенная совместимость с **JSON** форматом<sup> #</sup>](#stroki-ecmascript-sovmestimye-s-json);
 
- •      [**```.toString()```** — прототипный метод обновлён<sup>#</sup>](#dorabotka-prototipnogo-metoda-tostring).
+ •      [**```.toString()```** — прототипный метод обновлён<sup> #</sup>](#dorabotka-prototipnogo-metoda-tostring).
 
 -------------
 
-### [Stage 3 — Pre-release<sup>#</sup>](#-stage-3)
+### [Stage 3 — Pre-release<sup> #</sup>](#-stage-3)
 
- •      [**```#```** —  приватное всё у классов, через октоторп<sup>#</sup>](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov);
+ •      [**```#```** —  приватное всё у классов, через октоторп<sup> #</sup>](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov);
 
- •      [**```#!/usr/bin/env node```**  — шебанг грамматика для скриптов<sup>#</sup>](#shebang-grammatika);
+ •      [**```#!/usr/bin/env node```**  — шебанг грамматика для скриптов<sup> #</sup>](#shebang-grammatika);
 
- •      [**```BigInt()```** — новый примитив, для чисел произвольной точности<sup>#</sup>](#bolshie-chisla-s-bigint);
+ •      [**```BigInt()```** — новый примитив, для чисел произвольной точности<sup> #</sup>](#bolshie-chisla-s-bigint);
 
- •      [**```globalThis```** — новый способ доступа к глобальному контексту<sup>#</sup>](#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu);
+ •      [**```globalThis```** — новый способ доступа к глобальному контексту<sup> #</sup>](#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu);
 
- •      [**```import(dynamic)```** — динамический импорт<sup>#</sup>](#dinamicheskiy-importdynamic);
+ •      [**```import(dynamic)```** — динамический импорт<sup> #</sup>](#dinamicheskiy-importdynamic);
 
- •      [**```import.meta```** — мета-информация о загружаемом модуле<sup>#</sup>](#importmeta--meta-informaciya-o-zagruzhaemom-module);
+ •      [**```import.meta```** — мета-информация о загружаемом модуле<sup> #</sup>](#importmeta--meta-informaciya-o-zagruzhaemom-module);
 
- •      [**```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение<sup>#</sup>](#sozdanie-obekta-metodom-objectfromentries);
+ •      [**```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение<sup> #</sup>](#sozdanie-obekta-metodom-objectfromentries);
 
- •      [**```JSON.stringify()```** — фикс метода<sup>#</sup>](#fiks-metoda-jsonstringify);
+ •      [**```JSON.stringify()```** — фикс метода<sup> #</sup>](#fiks-metoda-jsonstringify);
 
- •      [**```RegExp```** — устаревшие возможности<sup>#</sup>](#ustarevshie-vozmozhnosti-regexp);
+ •      [**```RegExp```** — устаревшие возможности<sup> #</sup>](#ustarevshie-vozmozhnosti-regexp);
 
- •      [**```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк<sup>#</sup>](#prototipnye-metody-strok-trimstart-i-trimend);
+ •      [**```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк<sup> #</sup>](#prototipnye-metody-strok-trimstart-i-trimend);
 
- •      [**```.matchAll()```** — **```.match()```** с глобальным флагом<sup>#</sup>](#matchall--novyy-prototipnyy-metod-strok);
+ •      [**```.matchAll()```** — **```.match()```** с глобальным флагом<sup> #</sup>](#matchall--novyy-prototipnyy-metod-strok);
 
- •      [**```.flat()```** и **```.flatMap()```** — прототипные методы массивов<sup>#</sup>](#odnomernye-massivy-s-flat-i-flatmap).
+ •      [**```.flat()```** и **```.flatMap()```** — прототипные методы массивов<sup> #</sup>](#odnomernye-massivy-s-flat-i-flatmap).
 
 
-### [Итоги<sup>#</sup>](#itogi)
+### [Итоги<sup> #</sup>](#itogi)
 
 
 
@@ -180,7 +180,7 @@ empty_description_symbol_link.description
 
 EcmaScript до десятой редакции утверждает, что *JSON* является подмножеством `JSON.parse`, но это неверно.
 
-*JSON* строки могут содержать не экранированные символы разделителей линий <sup>`U+2028` *LINE SEPARATOR*</sup> и абзацев <sup>**`U+2029`** *PARAGRAPH SEPARATOR*</sup>.
+*JSON* строки могут содержать неэкранированные символы разделителей линий **`U+2028`** <sup> *LINE SEPARATOR*</sup> и абзацев **`U+2029`**<sup> *PARAGRAPH SEPARATOR*</sup>.
 
 Строки *ECMAScript* до десятой версии  — нет.
 
@@ -493,12 +493,13 @@ typeof 123n;
 
 
 Поддерживается унарный минус, унарный плюс возвращает ошибку:
- ```javascript
+```javascript
  -2n
  // -2n
 
  +2n
  // Uncaught TypeError: Cannot convert a BigInt value to a number
+
  ```
 
 
