@@ -185,7 +185,7 @@ EcmaScript до десятой редакции утверждает, что *JS
 Строки *ECMAScript* до десятой версии  — нет.
 
 Если в *Edge* вызвать `eval()` со строкой `"\u2029"`,
-он ведёт себя так, словно мы сделали перенос строки — прямо посреди кода.
+он ведёт себя так, словно мы сделали перенос строки — прямо посреди кода:
 
 ![](https://habrastorage.org/webt/vc/yg/-v/vcyg-vy7larz8y4kswiqinjhfh4.png)
 
@@ -207,7 +207,7 @@ C *ES*10 строками — всё в порядке:
 <spoiler title="Цели изменений">
 * убрать обратно несовместимое требование:
 
-&gt; Если реализация не&nbsp;может создать строку исходного кода, соответствующую этим критериям, она должна вернуть строку, для которой eval будет выброшено исключение с&nbsp;ошибкой синтаксиса.&laquo;;
+> Если реализация не&nbsp;может создать строку исходного кода, соответствующую этим критериям, она должна вернуть строку, для которой eval будет выброшено исключение с&nbsp;ошибкой синтаксиса.
 
 * уточнить &laquo;функционально эквивалентное&raquo; требование;
 
@@ -280,7 +280,7 @@ Function.prototype.toString.call({});
 <https://github.com/tc39/proposal-private-methods><br />
 <https://github.com/tc39/proposal-static-class-features><br />
 
-В&nbsp;некоторых языках есть договорённость, называть приватные методы через видимый пробел <sup>( &laquo;**_**&raquo; &mdash; такая_штука, ты&nbsp;можешь знать этот знак под неверным названием&nbsp;&mdash; нижнее подчёркивание)</sup>.
+В&nbsp;некоторых языках есть договорённость, называть приватные методы через видимый пробел <sup>( &laquo;**_**&raquo; &mdash; такая_штука, ты&nbsp;можешь знать этот знак под неверным названием&nbsp;&mdash; нижнее подчёркивание)</sup>.
 
 Например так:
 ```php
@@ -394,13 +394,15 @@ console.log(AdultContentForAdult.content)
 
 ```
 
-Пример излишне усложнён для демонстрации приватных свойств\методов\атрибутов разом. Но&nbsp;в&nbsp;целом&nbsp;JS радует глаз своей лаконичностью по&nbsp;сравнению с&nbsp;PHP вариантом.
-Никаких тебе private function _..., ни&nbsp;точек с&nbsp;запятой в&nbsp;конце строки, и&nbsp;точка вместо &laquo;-&gt;&raquo; для перехода вглубь объекта.
+Пример излишне усложнён для демонстрации приватных свойств, методов и атрибутов разом. Но&nbsp;в&nbsp;целом&nbsp;JS — радует глаз своей лаконичностью по&nbsp;сравнению с&nbsp;PHP вариантом. Никаких тебе private function _..., ни&nbsp;точек с&nbsp;запятой в&nbsp;конце строки, и&nbsp;точка вместо &laquo;-&gt;&raquo; для перехода вглубь объекта.
+
 Геттеры именованные. Для динамических имён&nbsp;&mdash; прокси-объекты.
 
 Вроде&nbsp;бы мелочи, но&nbsp;после перехода на&nbsp;JS, всё меньше желания возвращаться к&nbsp;PHP.
 
-К&nbsp;слову приватные акцессоры доступны только с&nbsp;Babel&nbsp;7.3.0 и&nbsp;старше. Крайняя версия на&nbsp;npmjs.com&nbsp;&mdash; 7.2.2
+К&nbsp;слову приватные акцессоры доступны только с&nbsp;Babel&nbsp;7.3.0 и&nbsp;старше.
+
+Крайняя версия на&nbsp;npmjs.com&nbsp;&mdash; 7.2.2
 
 Ждём в&nbsp;Stage&nbsp;4!
 
@@ -426,7 +428,7 @@ export {};
 console.log(1);
 ```
 
-<sup>в&nbsp;данный момент на&nbsp;подобный фортель *Chrome* выбрасывает `SyntaxError: Invalid or&nbsp;unexpected token`</sup>
+<sup>в&nbsp;данный момент, на&nbsp;подобный фортель, *Chrome* выбрасывает `SyntaxError: Invalid or&nbsp;unexpected token`</sup>
  
  
 
@@ -503,6 +505,9 @@ typeof 123n;
  ```
 
 
+ 
+
+
 ### `globalThis` — новый способ доступа к глобальному контексту
 
 <https://github.com/tc39/proposal-global>
@@ -564,7 +569,7 @@ element.addEventListener('click', async () => {
 })
 ```
 
-Синтаксически, это выглядит как вызов функции `import()`, но&nbsp;не&nbsp;наследуется от&nbsp;Function.prototype, а&nbsp;значит вызвать через `call` или `apply` &mdash; не&nbsp;удастся:
+Синтаксически, это выглядит как вызов функции `import()`, но&nbsp;не&nbsp;наследуется от&nbsp;`Function.prototype`, а&nbsp;значит вызвать через `call` или `apply` &mdash; не&nbsp;удастся:
 ```javascript
 import.call("example this", "argument")
 // Uncaught SyntaxError: Unexpected identifier
@@ -579,12 +584,12 @@ import.call("example this", "argument")
 
 <sup>*работает в Chrome*</sup>
 
-В&nbsp;коде загружаемого модуля стало возможно получить информацию по&nbsp;нему:
+В&nbsp;коде загружаемого модуля стало возможно получить информацию по&nbsp;нему. Сейчас это только адрес по&nbsp;которому модуль был загружен:
 ```javascript
 console.log(import.meta);
 // { url: "file:///home/user/my-module.js" }
 ```
-Сейчас это только адрес по&nbsp;которому модуль был загружен.
+
  
  
 
@@ -608,8 +613,7 @@ Object.fromPairs([['key_1', 1], ['key_2', 2]])
 
 <https://github.com/tc39/proposal-well-formed-stringify>
 
-В&nbsp;разделе [8.1&nbsp;RFC 8259](https://tools.ietf.org/html/rfc8259#section-8.1) требуется, чтобы текст *JSON*, обмениваемый за&nbsp;пределами замкнутой экосистемы,
-кодировался с&nbsp;использованием UTF-8, но&nbsp;JSON.stringify может возвращать строки, содержащие кодовые точки, которые не&nbsp;представлены в&nbsp;UTF-8 (в&nbsp;частности, суррогатные кодовые точки от&nbsp;U+D800 до&nbsp;U+DFFF)
+В&nbsp;разделе [8.1&nbsp;RFC 8259](https://tools.ietf.org/html/rfc8259#section-8.1) требуется, чтобы текст *JSON*, обмениваемый за&nbsp;пределами замкнутой экосистемы, кодировался с&nbsp;использованием UTF-8, но&nbsp;JSON.stringify может возвращать строки, содержащие кодовые точки, которые не&nbsp;представлены в&nbsp;UTF-8 (в&nbsp;частности, суррогатные кодовые точки от&nbsp;U+D800 до&nbsp;U+DFFF)
 
 Так строка `\uDF06\uD834` после обработки JSON.stringify() превращается в `\\udf06\\ud834`:
 ```javascript
@@ -620,7 +624,7 @@ JSON.stringify('\uDEAD')
 '"\\udead"'
 ```
 
-Такого быть не&nbsp;должно, и&nbsp;новая спецификация это исправляет. *Edge* и&nbsp;*Chrome* уже обновились.
+Такого быть не&nbsp;должно, и&nbsp;новая спецификация это исправляет. <sup>*Edge* и&nbsp;*Chrome* уже обновились.</sup>
 
 
  
@@ -631,7 +635,7 @@ JSON.stringify('\uDEAD')
 
 <https://github.com/tc39/proposal-regexp-legacy-features>
 
-Спецификация для устаревших функций *RegExp*, вроде `RegExp.$1`, а&nbsp;также `RegExp.prototype.compile` метода.
+Спецификация для устаревших функций *RegExp*, вроде `RegExp.$1`, и&nbsp;`RegExp.prototype.compile()`&nbsp;метода.
 
 
  
@@ -763,7 +767,7 @@ deep_deep_array.flat(100500)
 
 ## Итоги
 
-*Stage* **4**&nbsp;привнёс скорее косметические изменения. Интерес представляет *Stage*&nbsp;**3**. Большинство из&nbsp;предложений в&nbsp;*Chrome* уже реализованы, за&nbsp;исключением пожалуй `Object.fromEntries()` наличие которого не&nbsp;критично, а&nbsp;приватные свойства очень ждём.
+*Stage* **4**&nbsp;привнёс скорее косметические изменения. Интерес представляет *Stage*&nbsp;**3**. Большинство из&nbsp;предложений в&nbsp;*Chrome* уже реализованы, за&nbsp;исключением пожалуй `Object.fromEntries()`, наличие которого не&nbsp;критично, а&nbsp;приватные свойства очень ждём.
 
  
 
