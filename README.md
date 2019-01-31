@@ -793,7 +793,8 @@ deep_deep_array.flat(100500)
 [Обзор возможностей стандартов ES7, ES8 и ES9](https://habr.com/ru/company/ruvds/blog/431872/)
 
 [Шебанг](https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B1%D0%B0%D0%BD%D0%B3_(Unix))
-https://habr.com/ru/post/354930/
+
+[BigInt — длинная арифметика в JavaScript](https://habr.com/ru/post/354930/)
 
 
 -------------
