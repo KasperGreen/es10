@@ -792,15 +792,17 @@ deep_deep_array.flat(100500)
 
 
 ## Материалы по&nbsp;теме
-https://www.ecma-international.org/publications/standards/Ecma-262.htm
-https://tc39.github.io/ecma262/
-https://developer.okta.com/blog/2019/01/22/whats-new-in-es2019
-https://habr.com/ru/sandbox/113964/
-https://www.sitepoint.com/javascript-private-class-fields/
-https://ru.wikipedia.org/wiki/ECMAScript
-https://habr.com/ru/company/ruvds/blog/431872/
-https://medium.com/devschacht/javascripts-new-private-class-fields-c60daffe361b
-https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B1%D0%B0%D0%BD%D0%B3_(Unix)
+[Актуальная версия стандарта Ecma-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+
+[Черновик следующей версии стандарта Ecma-262](https://tc39.github.io/ecma262/)
+
+[Новые #приватные поля классов в JavaScript](https://medium.com/devschacht/javascripts-new-private-class-fields-c60daffe361b)
+
+[ECMAScript](https://ru.wikipedia.org/wiki/ECMAScript)
+
+[Обзор возможностей стандартов ES7, ES8 и ES9](https://habr.com/ru/company/ruvds/blog/431872/)
+
+[Шебанг](https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B1%D0%B0%D0%BD%D0%B3_(Unix))
 https://habr.com/ru/post/354930/
 
 -------------
