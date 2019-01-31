@@ -1,9 +1,9 @@
 ﻿
 Стандартизация JS&nbsp;перешла на&nbsp;годичный цикл обновлений, а&nbsp;начало года&nbsp;&mdash; отличное время для того чтобы узнать, что нас ждёт в&nbsp;юбилейной&nbsp;&mdash; уже десятой редакции EcmaScript!
 
-*ES*9 - [актуальная версия спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+*ES*9 - [актуальная версия спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm).
 
-*ES*10 — всё ещё [черновик](https://tc39.github.io/ecma262/)
+*ES*10 — всё ещё [черновик](https://tc39.github.io/ecma262/).
 
 
 На сегодняшний день в [*Stage* **4**<sup> #</sup>](https://habr.com/ru/post/437806/#-stage-4) — всего несколько предложений.
