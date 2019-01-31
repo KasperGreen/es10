@@ -6,11 +6,11 @@
 *ES*10 — всё ещё [черновик](https://tc39.github.io/ecma262/)
 
 
-На сегодняшний день в [*Stage* **4**](https://habr.com/ru/post/437806/#-stage-4) — всего несколько предложений.
+На сегодняшний день в [*Stage* **4**<sup>#</sup>](https://habr.com/ru/post/437806/#-stage-4) — всего несколько предложений.
 
-А в [*Stage* **3**](https://habr.com/ru/post/437806/#-stage-3) — целая дюжина!
+А в [*Stage* **3**<sup>#</sup>](https://habr.com/ru/post/437806/#-stage-3) — целая дюжина!
 
-Из них, на мой взгляд, самые интересные — [приватные поля классов](https://habr.com/ru/post/437806/#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov), [шебанг грамматика для скриптов](https://habr.com/ru/post/437806/#shebang-grammatika), [числа произвольной точности](https://habr.com/ru/post/437806/#bolshie-chisla-s-bigint), [доступ к глобальному контексту](https://habr.com/ru/post/437806/#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu) и [динамические импорты](https://habr.com/ru/post/437806/#dinamicheskiy-importdynamic).
+Из них, на мой взгляд, самые интересные — [приватные поля классов<sup>#</sup>](https://habr.com/ru/post/437806/#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov), [шебанг грамматика для скриптов<sup>#</sup>](https://habr.com/ru/post/437806/#shebang-grammatika), [числа произвольной точности<sup>#</sup>](https://habr.com/ru/post/437806/#bolshie-chisla-s-bigint), [доступ к глобальному контексту<sup>#</sup>](https://habr.com/ru/post/437806/#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu) и [динамические импорты<sup>#</sup>](https://habr.com/ru/post/437806/#dinamicheskiy-importdynamic).
 
 
  
@@ -21,48 +21,48 @@
 
 ## Содержание
 
-### [Пять стадий](#pyat-stadiy)
+### [Пять стадий<sup>#</sup>](#pyat-stadiy)
 
-### [Stage 4 — Final](#-stage-4)
+### [Stage 4 — Final<sup>#</sup>](#-stage-4)
 
- •      [**```catch```** — аргумент стал необязательным](#neobyazatelnyy-argument-u-catch);
+ •      [**```catch```** — аргумент стал необязательным<sup>#</sup>](#neobyazatelnyy-argument-u-catch);
 
- •      [**```Symbol().description```** — акцессор к описанию символа](#dostup-k-opisaniyu-simvolnoy-ssylki);
+ •      [**```Symbol().description```** — акцессор к описанию символа<sup>#</sup>](#dostup-k-opisaniyu-simvolnoy-ssylki);
 
- •      [**```'строки EcmaScript'```** — улучшенная совместимость с **JSON** форматом](#stroki-ecmascript-sovmestimye-s-json);
+ •      [**```'строки EcmaScript'```** — улучшенная совместимость с **JSON** форматом<sup>#</sup>](#stroki-ecmascript-sovmestimye-s-json);
 
- •      [**```.toString()```** — прототипный метод обновлён](#dorabotka-prototipnogo-metoda-tostring).
+ •      [**```.toString()```** — прототипный метод обновлён<sup>#</sup>](#dorabotka-prototipnogo-metoda-tostring).
 
 -------------
 
-### [Stage 3 — Pre-release](#-stage-3)
+### [Stage 3 — Pre-release<sup>#</sup>](#-stage-3)
 
- •      [**```#```** —  приватное всё у классов, через октоторп](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov);
+ •      [**```#```** —  приватное всё у классов, через октоторп<sup>#</sup>](#privatnyestaticheskiepublichnye-metodysvoystvaatributy-u-klassov);
 
- •      [**```#!/usr/bin/env node```**  — шебанг грамматика для скриптов](#shebang-grammatika);
+ •      [**```#!/usr/bin/env node```**  — шебанг грамматика для скриптов<sup>#</sup>](#shebang-grammatika);
 
- •      [**```BigInt()```** — новый примитив, для чисел произвольной точности](#bolshie-chisla-s-bigint);
+ •      [**```BigInt()```** — новый примитив, для чисел произвольной точности<sup>#</sup>](#bolshie-chisla-s-bigint);
 
- •      [**```globalThis```** — новый способ доступа к глобальному контексту](#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu);
+ •      [**```globalThis```** — новый способ доступа к глобальному контексту<sup>#</sup>](#globalthis--novyy-sposob-dostupa-k-globalnomu-kontekstu);
 
- •      [**```import(dynamic)```** — динамический импорт](#dinamicheskiy-importdynamic);
+ •      [**```import(dynamic)```** — динамический импорт<sup>#</sup>](#dinamicheskiy-importdynamic);
 
- •      [**```import.meta```** — мета-информация о загружаемом модуле](#importmeta--meta-informaciya-o-zagruzhaemom-module);
+ •      [**```import.meta```** — мета-информация о загружаемом модуле<sup>#</sup>](#importmeta--meta-informaciya-o-zagruzhaemom-module);
 
- •      [**```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение](#sozdanie-obekta-metodom-objectfromentries);
+ •      [**```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение<sup>#</sup>](#sozdanie-obekta-metodom-objectfromentries);
 
- •      [**```JSON.stringify()```** — фикс метода](#fiks-metoda-jsonstringify);
+ •      [**```JSON.stringify()```** — фикс метода<sup>#</sup>](#fiks-metoda-jsonstringify);
 
- •      [**```RegExp```** — устаревшие возможности](#ustarevshie-vozmozhnosti-regexp);
+ •      [**```RegExp```** — устаревшие возможности<sup>#</sup>](#ustarevshie-vozmozhnosti-regexp);
 
- •      [**```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк](#prototipnye-metody-strok-trimstart-i-trimend);
+ •      [**```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк<sup>#</sup>](#prototipnye-metody-strok-trimstart-i-trimend);
 
- •      [**```.matchAll()```** — **```.match()```** с глобальным флагом](#matchall--novyy-prototipnyy-metod-strok);
+ •      [**```.matchAll()```** — **```.match()```** с глобальным флагом<sup>#</sup>](#matchall--novyy-prototipnyy-metod-strok);
 
- •      [**```.flat()```** и **```.flatMap()```** — прототипные методы массивов](#odnomernye-massivy-s-flat-i-flatmap).
+ •      [**```.flat()```** и **```.flatMap()```** — прототипные методы массивов<sup>#</sup>](#odnomernye-massivy-s-flat-i-flatmap).
 
 
-### [Итоги](#itogi)
+### [Итоги<sup>#</sup>](#itogi)
 
 
 
@@ -410,7 +410,7 @@ console.log(AdultContentForAdult.content)
 
 ### Шебанг грамматика
 
-https://github.com/tc39/proposal-hashbang
+<https://github.com/tc39/proposal-hashbang>
 
 Хешбэнг&nbsp;&mdash; знакомый юниксойдам способ указать интерпретатор для исполняемого файла:
 ```javascript
@@ -433,7 +433,7 @@ console.log(1);
 
 ### Большие числа с BigInt
 
-https://github.com/tc39/proposal-bigint
+<https://github.com/tc39/proposal-bigint>
 
 <sup>*работает в Chrome*</sup>
 
@@ -574,7 +574,7 @@ import.call("example this", "argument")
 
 ### import.meta — мета-информация о загружаемом модуле.
 
-https://github.com/tc39/proposal-import-meta
+<https://github.com/tc39/proposal-import-meta>
 
 <sup>*работает в Chrome*</sup>
 
@@ -590,7 +590,7 @@ console.log(import.meta);
 
 ### Создание объекта методом `Object.fromEntries()`
 
-https://github.com/tc39/proposal-object-from-entries
+<https://github.com/tc39/proposal-object-from-entries>
 
 Аналог `_.fromPairs` из `lodash`:
 ```javascript
@@ -605,7 +605,7 @@ Object.fromPairs([['key_1', 1], ['key_2', 2]])
 
 ###  Фикс метода `JSON.stringify()`
 
-https://github.com/tc39/proposal-well-formed-stringify
+<https://github.com/tc39/proposal-well-formed-stringify>
 
 В&nbsp;разделе [8.1&nbsp;RFC 8259](https://tools.ietf.org/html/rfc8259#section-8.1) требуется, чтобы текст *JSON*, обмениваемый за&nbsp;пределами замкнутой экосистемы,
 кодировался с&nbsp;использованием UTF-8, но&nbsp;JSON.stringify может возвращать строки, содержащие кодовые точки, которые не&nbsp;представлены в&nbsp;UTF-8 (в&nbsp;частности, суррогатные кодовые точки от&nbsp;U+D800 до&nbsp;U+DFFF)
@@ -628,7 +628,7 @@ JSON.stringify('\uDEAD')
 
 ### Устаревшие возможности RegExp
 
-https://github.com/tc39/proposal-regexp-legacy-features
+<https://github.com/tc39/proposal-regexp-legacy-features>
 
 Спецификация для устаревших функций *RegExp*, вроде `RegExp.$1`, а&nbsp;также `RegExp.prototype.compile` метода.
 
@@ -659,7 +659,7 @@ console.log( one.trimStart() + two.trimEnd() )
 
 ### .matchAll() — новый прототипный метод строк.
 
-https://github.com/tc39/proposal-string-matchall
+<https://github.com/tc39/proposal-string-matchall>
 
 <sup>*работает в Chrome*</sup>
 
@@ -705,7 +705,7 @@ for(const item of string_for_searh.matchAll(/o/)) {
 
 ### Одномерные массивы с `.flat()` и `.flatMap()`
 
-https://github.com/tc39/proposal-flatMap
+<https://github.com/tc39/proposal-flatMap>
 
 <sup>*работает в Chrome*</sup>
 
@@ -781,9 +781,9 @@ deep_deep_array.flat(100500)
 
 [Черновик следующей версии стандарта Ecma-262](https://tc39.github.io/ecma262/)
 
-[Новые #приватные поля классов в JavaScript](https://medium.com/devschacht/javascripts-new-private-class-fields-c60daffe361b)
-
 [ECMAScript](https://ru.wikipedia.org/wiki/ECMAScript)
+
+[Новые #приватные поля классов в JavaScript](https://medium.com/devschacht/javascripts-new-private-class-fields-c60daffe361b)
 
 [Обзор возможностей стандартов ES7, ES8 и ES9](https://habr.com/ru/company/ruvds/blog/431872/)
 
