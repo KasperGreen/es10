@@ -402,7 +402,7 @@ console.log(AdultContentForAdult.content)
 
 К&nbsp;слову приватные акцессоры доступны только с&nbsp;Babel&nbsp;7.3.0 и&nbsp;старше.
 
-Крайняя версия на&nbsp;npmjs.com&nbsp;&mdash; 7.2.2
+На момент написания статьи, самая свежая версия по версии&nbsp;npmjs.com&nbsp;&mdash; 7.2.2
 
 Ждём в&nbsp;Stage&nbsp;4!
 
@@ -414,7 +414,7 @@ console.log(AdultContentForAdult.content)
 
 <https://github.com/tc39/proposal-hashbang>
 
-Хешбэнг&nbsp;&mdash; знакомый юниксойдам способ указать интерпретатор для исполняемого файла:
+Хешбэнг&nbsp;&mdash; знакомый юниксоидам способ указать интерпретатор для исполняемого файла:
 ```javascript
 #!/usr/bin/env node
 // в скрипте
