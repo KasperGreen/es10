@@ -437,7 +437,10 @@ console.log(1);
 
 <https://github.com/tc39/proposal-bigint>
 
-<sup>*работает в Chrome*</sup>
+
+<spoiler title="поддержка браузерами">
+![Поддержка браузерами примитива BigInt()](https://habrastorage.org/webt/2z/zx/yy/2zzxyyqe3q713u_6bpsgfa0uwyo.png)
+</spoiler>
 
 Максимальное целое число, которое можно безопасно использовать в&nbsp;JavaScript (2⁵³ - 1):
 ```javascript
@@ -551,7 +554,11 @@ globalThis.myGLobalSettings
 
 <https://github.com/tc39/proposal-dynamic-import>
 
-<sup>*работает в Chrome*</sup>
+<spoiler title="поддержка браузерами">
+![Поддержка браузерами динамических импортов](https://habrastorage.org/webt/lx/66/nh/lx66nhte2i7jlnuuq_tdtpn-vdw.png)
+
+</spoiler>
+
 
 Хотелось переменные в&nbsp;строках импорта‽ С&nbsp;динамическими импортами это стало возможно:
 ```javascript
@@ -796,6 +803,9 @@ deep_deep_array.flat(100500)
 
 [BigInt — длинная арифметика в JavaScript](https://habr.com/ru/post/354930/)
 
+[Путь JavaScript модуля](https://habr.com/ru/post/181536/)
+
+[Почему не `private x`](https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x)
 
 -------------
 
