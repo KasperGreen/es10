@@ -607,7 +607,7 @@ console.log(import.meta);
 
 Аналог `_.fromPairs` из `lodash`:
 ```javascript
-Object.fromPairs([['key_1', 1], ['key_2', 2]])
+Object.fromEntries([['key_1', 1], ['key_2', 2]])
 // {key_1: 1; key_2: 2}
 ```
 
@@ -805,7 +805,7 @@ deep_deep_array.flat(100500)
 
 [Путь JavaScript модуля](https://habr.com/ru/post/181536/)
 
-[Почему не `private x`](https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x)
+[Почему не private x](https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x)
 
 -------------
 
