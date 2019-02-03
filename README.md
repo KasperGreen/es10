@@ -675,7 +675,7 @@ console.log( one.trimStart() + two.trimEnd() )
 
 <sup>*работает в Chrome*</sup>
 
-Работает похоже на&nbsp;метод `.match()` с&nbsp;включенным флагом `g`, но&nbsp;возвращает итератор:
+Работает как метод `.match()` с&nbsp;включенным флагом `g`, но&nbsp;возвращает итератор:
 ```javascript
 const string_for_searh = 'olololo'
 
