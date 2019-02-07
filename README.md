@@ -794,9 +794,9 @@ deep_deep_array.flat(100500)
 
 
 ## Материалы по теме
-[Актуальная версия стандарта Ecma-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+<sup>![Материал на английском](https://habrastorage.org/storage3/2e2/522/737/2e2522737ec404a9f76047e108dfaea0.gif)</sup> [Актуальная версия стандарта Ecma-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
 
-[Черновик следующей версии стандарта Ecma-262](https://tc39.github.io/ecma262/)
+<sup>![Материал на английском](https://habrastorage.org/storage3/2e2/522/737/2e2522737ec404a9f76047e108dfaea0.gif)</sup> [Черновик следующей версии стандарта Ecma-262](https://tc39.github.io/ecma262/)
 
 [ECMAScript](https://ru.wikipedia.org/wiki/ECMAScript)
 
@@ -810,7 +810,7 @@ deep_deep_array.flat(100500)
 
 <sup>![Статья на Хабре](https://habrastorage.org/storage2/c57/b92/af4/c57b92af4ee0d37f787c211a068b1b95.png)</sup> [Путь JavaScript модуля](https://habr.com/ru/post/181536/)
 
-[Почему не private x](https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x)
+<sup>![Материал на английском](https://habrastorage.org/storage3/2e2/522/737/2e2522737ec404a9f76047e108dfaea0.gif)</sup> [Почему не private x](https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x)
 
 <sup>![Статья на Хабре](https://habrastorage.org/storage2/c57/b92/af4/c57b92af4ee0d37f787c211a068b1b95.png)</sup> [ECMAScript Proposal: Array.prototype.{flat,flatMap}](https://habr.com/ru/post/433820/)
 
