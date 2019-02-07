@@ -802,15 +802,17 @@ deep_deep_array.flat(100500)
 
 [Новые #приватные поля классов в JavaScript](https://medium.com/devschacht/javascripts-new-private-class-fields-c60daffe361b)
 
-[Обзор возможностей стандартов ES7, ES8 и ES9](https://habr.com/ru/company/ruvds/blog/431872/)
+<sup>![Статья на Хабре](https://habrastorage.org/storage2/c57/b92/af4/c57b92af4ee0d37f787c211a068b1b95.png)</sup> [Обзор возможностей стандартов ES7, ES8 и ES9](https://habr.com/ru/company/ruvds/blog/431872/)
 
 [Шебанг](https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B1%D0%B0%D0%BD%D0%B3_(Unix))
 
-[BigInt — длинная арифметика в JavaScript](https://habr.com/ru/post/354930/)
+<sup>![Статья на Хабре](https://habrastorage.org/storage2/c57/b92/af4/c57b92af4ee0d37f787c211a068b1b95.png)</sup> [BigInt — длинная арифметика в JavaScript](https://habr.com/ru/post/354930/)
 
-[Путь JavaScript модуля](https://habr.com/ru/post/181536/)
+<sup>![Статья на Хабре](https://habrastorage.org/storage2/c57/b92/af4/c57b92af4ee0d37f787c211a068b1b95.png)</sup> [Путь JavaScript модуля](https://habr.com/ru/post/181536/)
 
 [Почему не private x](https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x)
+
+<sup>![Статья на Хабре](https://habrastorage.org/storage2/c57/b92/af4/c57b92af4ee0d37f787c211a068b1b95.png)</sup> [ECMAScript Proposal: Array.prototype.{flat,flatMap}](https://habr.com/ru/post/433820/)
 
 -------------
 
