@@ -814,6 +814,7 @@ deep_deep_array.flat(100500)
 
 <sup>![Статья на Хабре](https://habrastorage.org/storage2/c57/b92/af4/c57b92af4ee0d37f787c211a068b1b95.png)</sup> [ECMAScript Proposal: Array.prototype.{flat,flatMap}](https://habr.com/ru/post/433820/)
 
+[Публичные и приватные поля классов](https://medium.com/webbdev/js-5c96df7f8c91)
 -------------
 
 
