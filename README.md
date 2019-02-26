@@ -816,6 +816,7 @@ deep_deep_array.flat(100500)
 
 [Публичные и приватные поля классов](https://medium.com/webbdev/js-5c96df7f8c91)
 
+[JavaScript: Большое целое Ну почему](https://habr.com/ru/post/439402/)
 
 
 -------------
