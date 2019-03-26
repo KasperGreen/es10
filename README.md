@@ -263,6 +263,8 @@ Function.prototype.toString.call({});
 
 
 
+ 
+ 
 
 
 ### Создание объекта методом `Object.fromEntries()`
@@ -276,8 +278,8 @@ Object.fromEntries([['key_1', 1], ['key_2', 2]])
 ```
 
 
-
-
+ 
+ 
 
 
 ### Одномерные массивы с `.flat()` и `.flatMap()`
@@ -335,7 +337,7 @@ deep_deep_array.flat(100500)
 
 
 
-
+ 
 
 
 
