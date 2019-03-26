@@ -271,6 +271,8 @@ Function.prototype.toString.call({});
 
 <https://github.com/tc39/proposal-object-from-entries>
 
+<sup>*работает в Chrome*</sup>
+
 Аналог `_.fromPairs` из `lodash`:
 ```javascript
 Object.fromEntries([['key_1', 1], ['key_2', 2]])
@@ -788,7 +790,7 @@ for(const item of string_for_searh.matchAll(/o/)) {
 
 ## Итоги
 
-*Stage* **4**&nbsp;привнёс скорее косметические изменения. Интерес представляет *Stage*&nbsp;**3**. Большинство из&nbsp;предложений в&nbsp;*Chrome* уже реализованы, за&nbsp;исключением пожалуй `Object.fromEntries()`, наличие которого не&nbsp;критично, а&nbsp;приватные свойства очень ждём.
+*Stage* **4**&nbsp;привнёс скорее косметические изменения. Интерес представляет *Stage*&nbsp;**3**. Большинство из&nbsp;предложений в&nbsp;*Chrome* уже реализованы, а&nbsp; свойства у объектов — очень ждём.
 
  
 
