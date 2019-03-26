@@ -33,6 +33,10 @@
 
  •      [**```.toString()```** — прототипный метод обновлён<sup> #</sup>](#dorabotka-prototipnogo-metoda-tostring).
 
+ •      [**```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение<sup> #</sup>](#sozdanie-obekta-metodom-objectfromentries);
+
+ •      [**```.flat()```** и **```.flatMap()```** — прототипные методы массивов<sup> #</sup>](#odnomernye-massivy-s-flat-i-flatmap).
+
 -------------
 
 ### [Stage 3 — Pre-release<sup> #</sup>](#-stage-3)
@@ -49,7 +53,6 @@
 
  •      [**```import.meta```** — мета-информация о загружаемом модуле<sup> #</sup>](#importmeta--meta-informaciya-o-zagruzhaemom-module);
 
- •      [**```Object.fromEntries()```** — создание объекта из массива пар — ключ\значение<sup> #</sup>](#sozdanie-obekta-metodom-objectfromentries);
 
  •      [**```JSON.stringify()```** — фикс метода<sup> #</sup>](#fiks-metoda-jsonstringify);
 
@@ -58,8 +61,6 @@
  •      [**```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк<sup> #</sup>](#prototipnye-metody-strok-trimstart-i-trimend);
 
  •      [**```.matchAll()```** — **```.match()```** с глобальным флагом<sup> #</sup>](#matchall--novyy-prototipnyy-metod-strok);
-
- •      [**```.flat()```** и **```.flatMap()```** — прототипные методы массивов<sup> #</sup>](#odnomernye-massivy-s-flat-i-flatmap).
 
 
 ### [Итоги<sup> #</sup>](#itogi)
@@ -259,6 +260,83 @@ function* () { }.toString();
 Function.prototype.toString.call({});
 // Function.prototype.toString requires that 'this' be a Function"
 ```
+
+
+
+
+
+### Создание объекта методом `Object.fromEntries()`
+
+<https://github.com/tc39/proposal-object-from-entries>
+
+Аналог `_.fromPairs` из `lodash`:
+```javascript
+Object.fromEntries([['key_1', 1], ['key_2', 2]])
+// {key_1: 1; key_2: 2}
+```
+
+
+
+
+
+
+### Одномерные массивы с `.flat()` и `.flatMap()`
+
+<https://github.com/tc39/proposal-flatMap>
+
+<sup>*работает в Chrome*</sup>
+
+Массив обзавёлся прототипами `.flat()` и `.flatMap()`, которые в&nbsp;целом похожи на&nbsp;реализации в&nbsp;*lodash*, но&nbsp;всё&nbsp;же имеют некоторые отличия. Необязательный аргумент&nbsp;&mdash; устанавливает максимальную глубину обхода дерева:
+```javascript
+const deep_deep_array = [
+  '≥0 — первый уровень',
+  [
+    '≥1 — второй уровень',
+    [
+      '≥2 — третий уровень',
+      [
+        '≥3 — четвёртый уровень',
+        [
+          '≥4 — пятый уровень'
+        ]
+      ]
+    ]
+  ]
+]
+
+// 0 — вернёт массив без изменений
+deep_deep_array.flat(0)
+//  ["≥0 — первый уровень", Array(2)]
+
+// 1 — глубина по умолчанию
+deep_deep_array.flat()
+//  ["первый уровень", "второй уровень", Array(2)]
+
+deep_deep_array.flat(2)
+//  ["первый уровень", "второй уровень", "третий уровень", Array(2)]
+
+deep_deep_array.flat(100500)
+// ["первый уровень", "второй уровень", "третий уровень", "четвёртый уровень", "пятый уровень"]
+```
+
+`.flatMap()` эквивалентен последовательному вызову `.map().flat()`. Функция обратного вызова, передаваемая в&nbsp;метод, должна возвращать массив который станет частью общего плоского массива:
+```javascript
+['Hello', 'World'].flatMap(word => [...word])
+// ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
+```
+
+С использованием только `.flat()` и `.map()`, пример можно переписать так:
+```javascript
+ ['Hello', 'World'].map(word => [...word]).flat()
+// ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
+```
+
+Также нужно учитывать, что у `.flatMap()` в отличии от `.flat()` нет настроек глубины обхода. А значит склеен будет только первый уровень.
+
+
+
+
+
 
 
 
@@ -600,22 +678,6 @@ console.log(import.meta);
  
  
 
-
-### Создание объекта методом `Object.fromEntries()`
-
-<https://github.com/tc39/proposal-object-from-entries>
-
-Аналог `_.fromPairs` из `lodash`:
-```javascript
-Object.fromEntries([['key_1', 1], ['key_2', 2]])
-// {key_1: 1; key_2: 2}
-```
-
-
- 
- 
-
-
 ###  Фикс метода `JSON.stringify()`
 
 <https://github.com/tc39/proposal-well-formed-stringify>
@@ -715,61 +777,6 @@ for(const item of string_for_searh.matchAll(/o/)) {
  
 
 
-### Одномерные массивы с `.flat()` и `.flatMap()`
-
-<https://github.com/tc39/proposal-flatMap>
-
-<sup>*работает в Chrome*</sup>
-
-Массив обзавёлся прототипами `.flat()` и `.flatMap()`, которые в&nbsp;целом похожи на&nbsp;реализации в&nbsp;*lodash*, но&nbsp;всё&nbsp;же имеют некоторые отличия. Необязательный аргумент&nbsp;&mdash; устанавливает максимальную глубину обхода дерева:
-```javascript
-const deep_deep_array = [
-  '≥0 — первый уровень',
-  [
-    '≥1 — второй уровень',
-    [
-      '≥2 — третий уровень',
-      [
-        '≥3 — четвёртый уровень',
-        [
-          '≥4 — пятый уровень'
-        ]
-      ]
-    ]
-  ]
-]
-
-// 0 — вернёт массив без изменений
-deep_deep_array.flat(0)
-//  ["≥0 — первый уровень", Array(2)]
-
-// 1 — глубина по умолчанию
-deep_deep_array.flat()
-//  ["первый уровень", "второй уровень", Array(2)]
-
-deep_deep_array.flat(2)
-//  ["первый уровень", "второй уровень", "третий уровень", Array(2)]
-
-deep_deep_array.flat(100500)
-// ["первый уровень", "второй уровень", "третий уровень", "четвёртый уровень", "пятый уровень"]
-```
-
-`.flatMap()` эквивалентен последовательному вызову `.map().flat()`. Функция обратного вызова, передаваемая в&nbsp;метод, должна возвращать массив который станет частью общего плоского массива:
-```javascript
-['Hello', 'World'].flatMap(word => [...word])
-// ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
-```
-
-С использованием только `.flat()` и `.map()`, пример можно переписать так:
-```javascript
- ['Hello', 'World'].map(word => [...word]).flat()
-// ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
-```
-
-Также нужно учитывать, что у `.flatMap()` в отличии от `.flat()` нет настроек глубины обхода. А значит склеен будет только первый уровень.
-
-
-
 ---------
 
  
@@ -822,7 +829,13 @@ deep_deep_array.flat(100500)
 -------------
 
 
- 
+### UPD (март):
+
+#### Сменили статус на *Stage*-**4**:
+
+ •      [**```.trimStart()```** и **```.trimEnd()```** — прототипные методы строк<sup> #</sup>](#prototipnye-metody-strok-trimstart-i-trimend);
+
+ •      [**```.matchAll()```** — **```.match()```** с глобальным флагом<sup> #</sup>](#matchall--novyy-prototipnyy-metod-strok);
  
 
 
